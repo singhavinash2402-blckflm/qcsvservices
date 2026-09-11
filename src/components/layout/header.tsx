@@ -1,51 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { serviceGroups } from "@/config/service-catalog";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { MobileNavigation } from "@/components/layout/mobile-navigation";
 
 const navigation = [
-  { label: "Industries", href: "/#industries" },
-  { label: "Success Stories", href: "/#success-stories" },
-  { label: "About", href: "/#about" },
+  { label: "Industries", href: "/industries" },
+  { label: "Success Stories", href: "/success-stories" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact" },
 ];
 
-export const serviceGroups = [
-  {
-    title: "Validation & Quality",
-    services: [
-      "Computer System Validation",
-      "Quality Assurance",
-      "IT Infrastructure Qualification",
-      "Audits / Assessments",
-    ],
-  },
-  {
-    title: "Enterprise Technology",
-    services: [
-      "SAP Services",
-      "Manufacturing Execution Systems",
-      "Serialization",
-      "Cloud Services",
-    ],
-  },
-  {
-    title: "Project Delivery",
-    services: ["Project Management", "Project Documentation", "IT Staffing"],
-  },
-  {
-    title: "Digital",
-    services: ["Website Development"],
-  },
-];
-
 export function Header() {
-  const router = useRouter();
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
 
@@ -77,16 +46,30 @@ export function Header() {
             className="hidden items-center gap-1 lg:flex"
             aria-label="Primary navigation"
           >
-            <div className="relative">
+            <Link
+              href="/"
+              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+            >
+              Home
+            </Link>
+
+            <div className="relative flex items-center">
+              <Link
+                href="/services"
+                className="rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+              >
+                Services
+              </Link>
+
               <button
                 ref={servicesTriggerRef}
                 type="button"
                 onClick={() => setServicesOpen((current) => !current)}
-                className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                className="inline-flex items-center rounded-md px-1 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                aria-label="Toggle Services menu"
                 aria-expanded={servicesOpen}
                 aria-controls="desktop-services-menu"
               >
-                Services
                 <ChevronDown
                   aria-hidden="true"
                   className={`h-4 w-4 ${servicesOpen ? "rotate-180" : ""}`}
@@ -107,13 +90,13 @@ export function Header() {
                       <div className="mt-1.5">
                         {group.services.map((service) => (
                           <Link
-                            key={service}
-                            href="/#services"
+                            key={service.name}
+                            href={service.href}
                             onClick={() => setServicesOpen(false)}
                             className="block rounded-md px-2 py-1.5 text-sm text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
                             role="menuitem"
                           >
-                            {service}
+                            {service.name}
                           </Link>
                         ))}
                       </div>
@@ -137,18 +120,16 @@ export function Header() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
 
-            <Button
-              className="hidden sm:inline-flex"
-              onClick={() => {
-  router.push("/#contact");
-}}
+            <Link
+              href="/#contact"
+              className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
               <ArrowRight
                 aria-hidden="true"
                 className="ml-2 h-4 w-4"
               />
-            </Button>
+            </Link>
             <MobileNavigation />
           </div>
         </div>

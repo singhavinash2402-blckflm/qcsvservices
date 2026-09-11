@@ -1,4 +1,5 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -25,21 +26,21 @@ export function FinalCTA() {
                         </p>
 
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                            <a
-                                href="#services"
+                            <Link
+                                href="/services"
                                 className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)]"
                             >
                                 Explore Our Services
                                 <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-                            </a>
+                            </Link>
 
-                            <a
-                                href="#contact"
+                            <Link
+                                href="/#contact"
                                 className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--border-strong)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition-colors hover:bg-[var(--surface)]"
                             >
                                 <MessageCircle aria-hidden="true" className="mr-2 h-4 w-4" />
                                 Talk to QCSV
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

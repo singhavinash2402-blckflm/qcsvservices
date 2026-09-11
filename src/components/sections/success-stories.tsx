@@ -5,6 +5,8 @@ import {
   HardDrive,
   Layers3,
 } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -70,15 +72,25 @@ export function SuccessStories() {
             />
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="/success-stories"
             className="inline-flex shrink-0 items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
           >
             View all success stories
             <span aria-hidden="true" className="ml-2">
               →
             </span>
-          </button>
+          </Link>
+        </div>
+
+        <div className="relative mt-10 h-48 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] sm:h-56 lg:h-64">
+          <Image
+            src="/images/success-stories/success-stories.jpg"
+            alt="Abstract technology system visual for confirmed success stories"
+            fill
+            sizes="(min-width: 1024px) 1200px, 100vw"
+            className="object-cover object-center"
+          />
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -100,15 +112,15 @@ export function SuccessStories() {
                 {story.title}
               </h3>
 
-              <button
-                type="button"
+              <Link
+                href="/success-stories"
                 className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
               >
                 Read case study
                 <span aria-hidden="true" className="ml-2">
                   →
                 </span>
-              </button>
+              </Link>
             </Card>
           ))}
         </div>

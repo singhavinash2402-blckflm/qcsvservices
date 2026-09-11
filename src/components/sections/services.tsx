@@ -12,8 +12,11 @@ import {
   Users,
   Workflow,
 } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
+import { serviceHrefByName } from "@/config/service-catalog";
 import { Icon } from "@/components/ui/icon";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -131,6 +134,15 @@ export function Services() {
   title="Technology and quality expertise for regulated environments."
   description="QCSV provides validation, quality, enterprise technology and project delivery services designed to support organizations across regulated and technology-driven environments."
 />
+        <div className="relative mt-10 h-48 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] sm:h-56 lg:h-64">
+          <Image
+            src="/images/services/services-overview.jpg"
+            alt="Enterprise technology workspace with screens and connected systems"
+            fill
+            sizes="(min-width: 1024px) 1200px, 100vw"
+            className="object-cover object-center"
+          />
+        </div>
         <div className="mt-12 space-y-12">
           {serviceGroups.map((group) => (
             <div key={group.title}>
@@ -146,31 +158,30 @@ export function Services() {
 
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {group.services.map((service) => (
-                  <Card
+                  <Link
                     key={service.name}
-                    interactive
-                    className="flex h-full flex-col p-6"
+                    href={serviceHrefByName[service.name]}
+                    className="group block h-full rounded-[var(--radius-md)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
                   >
-                    <Icon icon={service.icon} size="md" />
+                    <Card interactive className="flex h-full flex-col p-6">
+                      <Icon icon={service.icon} size="md" />
 
-                    <h4 className="mt-5 font-display text-lg font-semibold text-[var(--foreground)]">
-                      {service.name}
-                    </h4>
+                      <h4 className="mt-5 font-display text-lg font-semibold text-[var(--foreground)]">
+                        {service.name}
+                      </h4>
 
-                    <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
-                      {service.description}
-                    </p>
+                      <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
+                        {service.description}
+                      </p>
 
-                    <button
-                      type="button"
-                      className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
-                    >
-                      Learn more
-                      <span aria-hidden="true" className="ml-2">
-                        →
+                      <span className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors group-hover:text-[var(--primary-hover)]">
+                        Learn more
+                        <span aria-hidden="true" className="ml-2">
+                          →
+                        </span>
                       </span>
-                    </button>
-                  </Card>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>

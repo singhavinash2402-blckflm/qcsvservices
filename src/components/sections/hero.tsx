@@ -1,9 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
 const capabilities = [
@@ -25,9 +25,21 @@ const capabilities = [
 ];
 
 export function Hero() {
-    const router = useRouter();
     return (
         <section className="relative isolate overflow-hidden">
+            <Image
+                src="/images/hero/qcsv-home-hero.jpg"
+                alt="Abstract enterprise technology system with connected digital patterns"
+                fill
+                priority
+                sizes="100vw"
+                className="absolute inset-0 -z-20 object-cover object-center"
+            />
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(5,15,30,0.96)_0%,rgba(5,15,30,0.8)_42%,rgba(5,15,30,0.42)_100%)]"
+            />
+
             <div
                 aria-hidden="true"
                 className="qcsv-ambient-glow -left-24 top-24"
@@ -66,28 +78,23 @@ export function Hero() {
                         </p>
 
                         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                            <Button
-                                className="w-full sm:w-auto"
-                                onClick={() => {
-                                    router.push("/#contact");
-                                }}
+                            <Link
+                                href="/#contact"
+                                className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] w-full sm:w-auto"
                             >
                                 Start a conversation
                                 <ArrowRight
                                     aria-hidden="true"
                                     className="ml-2 h-4 w-4"
                                 />
-                            </Button>
+                            </Link>
 
-                            <Button
-                                variant="outline"
-                                className="w-full sm:w-auto"
-                                onClick={() => {
-                                    router.push("/#services");
-                                }}
+                            <Link
+                                href="/services"
+                                className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--border-strong)] bg-transparent px-5 py-3 text-sm font-semibold text-[var(--foreground)] transition-colors hover:bg-[var(--surface)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] w-full sm:w-auto"
                             >
                                 Explore our services
-                            </Button>
+                            </Link>
                         </div>
 
                         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-4 border-t border-[var(--border)] pt-10 sm:grid-cols-3">

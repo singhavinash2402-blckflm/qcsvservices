@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { serviceGroups } from "@/components/layout/header";
+import { serviceGroups } from "@/config/service-catalog";
 
 const navigation = [
-  { label: "Industries", href: "/#industries" },
-  { label: "Success Stories", href: "/#success-stories" },
-  { label: "About", href: "/#about" },
+  { label: "Industries", href: "/industries" },
+  { label: "Success Stories", href: "/success-stories" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -68,15 +67,31 @@ export function MobileNavigation() {
             className="qcsv-container flex flex-col gap-1"
             aria-label="Mobile navigation"
           >
-            <div>
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+            >
+              Home
+            </Link>
+
+            <div className="flex items-center">
+              <Link
+                href="/services"
+                onClick={closeMenu}
+                className="flex min-h-11 flex-1 items-center rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+              >
+                Services
+              </Link>
+
               <button
                 type="button"
                 onClick={() => setServicesOpen((current) => !current)}
-                className="flex min-h-11 w-full items-center justify-between rounded-[var(--radius-md)] px-4 py-3 text-left text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                className="flex min-h-11 items-center rounded-[var(--radius-md)] px-4 py-3 text-left text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                aria-label="Toggle Services menu"
                 aria-expanded={servicesOpen}
                 aria-controls="mobile-services-menu"
               >
-                Services
                 <ChevronDown
                   aria-hidden="true"
                   className={`h-4 w-4 ${servicesOpen ? "rotate-180" : ""}`}
@@ -93,13 +108,13 @@ export function MobileNavigation() {
                       <div className="mt-1">
                         {group.services.map((service) => (
                           <Link
-                            key={service}
-                            href="/#services"
+                            key={service.name}
+                            href={service.href}
                             onClick={closeMenu}
                             className="block min-h-11 rounded-[var(--radius-md)] px-4 py-3 text-sm text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
                             role="menuitem"
                           >
-                            {service}
+                            {service.name}
                           </Link>
                         ))}
                       </div>
@@ -120,19 +135,17 @@ export function MobileNavigation() {
               </Link>
             ))}
 
-            <Button
-              className="mt-3 w-full"
-              onClick={() => {
-                closeMenu();
-                window.location.hash = "contact";
-              }}
+            <Link
+              href="/#contact"
+              onClick={closeMenu}
+              className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
               <ArrowRight
                 aria-hidden="true"
                 className="ml-2 h-4 w-4"
               />
-            </Button>
+            </Link>
           </nav>
         </div>
       ) : null}
