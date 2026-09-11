@@ -1,15 +1,50 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
+  --surface: #f8fafc;
+  --surface-elevated: #ffffff;
   --foreground: #0f172a;
+  --foreground-muted: #475569;
+  --foreground-subtle: #64748b;
+
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --secondary: #6366f1;
+  --accent: #10b981;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.18);
 }
 
 .dark {
   --background: #070b14;
+  --surface: #0d1322;
+  --surface-elevated: #131c31;
   --foreground: #f8fafc;
+  --foreground-muted: #94a3b8;
+  --foreground-subtle: #64748b;
+
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.24);
+
+  --primary: #0ea5e9;
+  --primary-hover: #38bdf8;
+  --secondary: #6366f1;
+  --accent: #10b981;
+
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.25);
 }
 
 * {
@@ -27,6 +62,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -34,8 +70,93 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #0ea5e9;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
+}
+
+@layer components {
+  .qcsv-container {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+  }
+
+  .qcsv-container-wide {
+    width: min(100% - 2rem, 1400px);
+    margin-inline: auto;
+  }
+
+  .qcsv-section {
+    position: relative;
+    padding-block: 5rem;
+  }
+
+  .qcsv-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-elevated);
+    box-shadow: var(--shadow-card);
+  }
+
+  .qcsv-glass {
+    border: 1px solid var(--border);
+    background: color-mix(in srgb, var(--surface-elevated) 75%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .qcsv-gradient-text {
+    background: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .qcsv-ambient-glow {
+    pointer-events: none;
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 9999px;
+    background: rgba(14, 165, 233, 0.12);
+    filter: blur(90px);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), monospace;
+  }
+}
+
+@media (min-width: 480px) {
+  .qcsv-container,
+  .qcsv-container-wide {
+    width: min(100% - 3rem, 1200px);
+  }
+
+  .qcsv-container-wide {
+    width: min(100% - 3rem, 1400px);
+  }
+}
+
+@media (min-width: 768px) {
+  .qcsv-section {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .qcsv-section {
+    padding-block: 7rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
