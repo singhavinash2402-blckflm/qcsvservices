@@ -1,31 +1,31 @@
-﻿import { ThemeToggle } from "@/components/theme/theme-toggle";
+﻿import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { Hero } from "@/components/sections/hero";
+import { Services } from "@/components/sections/services";
+import { Industries } from "@/components/sections/industries";
+import { WhyQCSV } from "@/components/sections/why-qcsv";
+import { SuccessStories } from "@/components/sections/success-stories";
+import { Methodology } from "@/components/sections/methodology";
+import { FinalCTA } from "@/components/sections/final-cta";
+import { Contact } from "@/components/sections/contact";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[var(--background)]">
-      <section className="qcsv-section flex min-h-screen items-center">
-        <div className="qcsv-container">
-          <div className="flex justify-end">
-            <ThemeToggle />
-          </div>
+    <div className="min-h-screen bg-[var(--background)]">
+      <Header />
 
-          <div className="mx-auto max-w-4xl py-16 text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
-              Next-Gen Technology & Digital Services
-            </p>
+      <main>
+        <Hero />
+        <Services />
+        <Industries />
+        <WhyQCSV />
+        <SuccessStories />
+        <Methodology />
+        <FinalCTA />
+        <Contact />
+      </main>
 
-            <h1 className="font-display text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-              Building technology solutions that move businesses forward.
-            </h1>
-
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-              QCSV Services helps organizations modernize technology, data,
-              cloud, and digital operations through practical, scalable
-              solutions.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+      <Footer />
+    </div>
   );
 }
