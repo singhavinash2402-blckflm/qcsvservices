@@ -1,12 +1,11 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/sections/hero";
+import { Statement } from "@/components/sections/statement";
 import { Services } from "@/components/sections/services";
 import { Industries } from "@/components/sections/industries";
-import { WhyQCSV } from "@/components/sections/why-qcsv";
 import { SuccessStories } from "@/components/sections/success-stories";
-import { Methodology } from "@/components/sections/methodology";
-import { FinalCTA } from "@/components/sections/final-cta";
+import { Faq } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 
 export default function HomePage() {
@@ -16,12 +15,11 @@ export default function HomePage() {
 
       <main>
         <Hero />
+        <Statement />
         <Services />
         <Industries />
-        <WhyQCSV />
         <SuccessStories />
-        <Methodology />
-        <FinalCTA />
+        <Faq />
         <Contact />
       </main>
 

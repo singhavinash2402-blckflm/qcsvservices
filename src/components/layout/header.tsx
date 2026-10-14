@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { serviceGroups } from "@/config/service-catalog";
@@ -17,6 +18,16 @@ const navigation = [
 export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
+  const isHome = usePathname() === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const overlay = isHome && !scrolled;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -31,7 +42,14 @@ export function Header() {
   }, [servicesOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
+    <header
+      data-overlay={overlay}
+      className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 border-b transition-colors duration-300 ${
+        overlay
+          ? "border-transparent bg-transparent"
+          : "border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-xl"
+      }`}
+    >
       <div className="qcsv-container-wide">
         <div className="flex min-h-16 items-center justify-between gap-6">
           <Link
