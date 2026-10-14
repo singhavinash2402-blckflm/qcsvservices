@@ -1,9 +1,4 @@
-import {
-  ClipboardCheck,
-  FileCheck2,
-  Layers3,
-  ShieldCheck,
-} from "lucide-react";
+import { ClipboardCheck, FileCheck2, Layers3, ShieldCheck } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -16,26 +11,26 @@ const strengths = [
     title: "Validation Expertise",
     description:
       "Specialized support for computer system validation, qualification and regulated technology environments.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     title: "Regulated Industry Focus",
     description:
       "Experience supporting technology and quality requirements across regulated and technology-driven industries.",
-    icon: ShieldCheck,
+    icon: ShieldCheck
   },
   {
     title: "Technology Capability",
     description:
       "Expertise across enterprise technology, SAP, manufacturing systems, cloud and digital solutions.",
-    icon: Layers3,
+    icon: Layers3
   },
   {
     title: "Documentation & Quality",
     description:
       "Structured project documentation and quality-focused execution supporting reliable delivery.",
-    icon: FileCheck2,
-  },
+    icon: FileCheck2
+  }
 ];
 
 export function WhyQCSV() {

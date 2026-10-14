@@ -6,7 +6,7 @@ import {
   LineChart,
   ShieldCheck,
   Target,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -29,38 +29,38 @@ const capabilities: Capability[] = [
     title: "Quality-system support",
     description:
       "Support for organizing quality activities around technology and validation work.",
-    icon: ShieldCheck,
+    icon: ShieldCheck
   },
   {
     title: "Risk management",
     description:
       "Structured consideration of risks, responsibilities and priorities within project activities.",
-    icon: Target,
+    icon: Target
   },
   {
     title: "Process consistency",
     description:
       "Practical support for clear, repeatable project and quality activities.",
-    icon: Workflow,
+    icon: Workflow
   },
   {
     title: "Documentation and controls",
     description:
       "Documentation coordination and control support for organized project records.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     title: "Data integrity considerations",
     description:
       "Support for keeping data integrity considerations visible within quality activities.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     title: "Continuous improvement",
     description:
       "Support for monitoring, review and improvement planning where confirmed for the engagement.",
-    icon: LineChart,
-  },
+    icon: LineChart
+  }
 ];
 
 const approach = [
@@ -69,57 +69,57 @@ const approach = [
     title: "Understand",
     description:
       "Understand business objectives, technology landscape and project requirements.",
-    icon: Gauge,
+    icon: Gauge
   },
   {
     number: "02",
     title: "Assess",
     description:
       "Assess current processes, systems, risks and applicable quality requirements.",
-    icon: Target,
+    icon: Target
   },
   {
     number: "03",
     title: "Plan",
     description:
       "Define the delivery approach, scope, responsibilities and project priorities.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     number: "04",
     title: "Execute",
     description:
       "Execute quality activities with structured coordination and clear responsibilities.",
-    icon: Workflow,
+    icon: Workflow
   },
   {
     number: "05",
     title: "Validate",
     description:
       "Review activities and evidence appropriate to the quality-focused project scope.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     number: "06",
     title: "Document",
     description:
       "Maintain clear and structured documentation throughout the engagement.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     number: "07",
     title: "Deliver",
     description:
       "Complete the engagement with an organized handover and delivery outcome.",
-    icon: ShieldCheck,
-  },
+    icon: ShieldCheck
+  }
 ];
 
 const industries = [
   "Pharmaceuticals",
   "Medical Devices",
   "Life Sciences",
-  "Regulated Manufacturing",
+  "Regulated Manufacturing"
 ];
 
 export default function QualityAssurancePage() {
@@ -128,7 +128,10 @@ export default function QualityAssurancePage() {
       <Header />
       <main>
         <section className="relative isolate overflow-hidden">
-          <div aria-hidden="true" className="qcsv-ambient-glow -left-24 top-20" />
+          <div
+            aria-hidden="true"
+            className="qcsv-ambient-glow -left-24 top-20"
+          />
           <div
             aria-hidden="true"
             className="qcsv-ambient-glow -right-32 bottom-0 bg-[rgba(99,102,241,0.1)]"
@@ -158,7 +161,8 @@ export default function QualityAssurancePage() {
                   Quality kept visible throughout delivery.
                 </h2>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--foreground-muted)]">
-                  QCSV helps organize quality activities, documentation and controls around the needs of each confirmed project scope.
+                  QCSV helps organize quality activities, documentation and
+                  controls around the needs of each confirmed project scope.
                 </p>
               </Card>
             </div>
@@ -184,7 +188,11 @@ export default function QualityAssurancePage() {
             />
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((capability) => (
-                <Card key={capability.title} interactive className="flex h-full flex-col p-6">
+                <Card
+                  key={capability.title}
+                  interactive
+                  className="flex h-full flex-col p-6"
+                >
                   <Icon icon={capability.icon} size="md" />
                   <h3 className="mt-5 font-display text-lg font-semibold text-[var(--foreground)]">
                     {capability.title}
@@ -207,14 +215,30 @@ export default function QualityAssurancePage() {
             />
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Risk and issue review", "Keep project risks and quality priorities visible."],
-                ["Documentation control", "Coordinate records, reviews and responsibilities."],
-                ["Data integrity focus", "Include data integrity considerations in quality discussions."],
-                ["Improvement planning", "Support review and improvement activities where confirmed."],
+                [
+                  "Risk and issue review",
+                  "Keep project risks and quality priorities visible."
+                ],
+                [
+                  "Documentation control",
+                  "Coordinate records, reviews and responsibilities."
+                ],
+                [
+                  "Data integrity focus",
+                  "Include data integrity considerations in quality discussions."
+                ],
+                [
+                  "Improvement planning",
+                  "Support review and improvement activities where confirmed."
+                ]
               ].map(([title, description]) => (
                 <Card key={title} className="p-6">
-                  <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">{description}</p>
+                  <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">
+                    {description}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -232,11 +256,17 @@ export default function QualityAssurancePage() {
               {approach.map((step) => (
                 <Card key={step.number} className="relative p-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold text-[var(--primary)]">{step.number}</span>
+                    <span className="font-mono text-xs font-semibold text-[var(--primary)]">
+                      {step.number}
+                    </span>
                     <Icon icon={step.icon} size="sm" />
                   </div>
-                  <h3 className="mt-6 font-display text-lg font-semibold text-[var(--foreground)]">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">{step.description}</p>
+                  <h3 className="mt-6 font-display text-lg font-semibold text-[var(--foreground)]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">
+                    {step.description}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -254,14 +284,25 @@ export default function QualityAssurancePage() {
                 />
                 <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                   {industries.map((industry) => (
-                    <li key={industry} className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-elevated)] px-4 py-3 text-sm font-semibold text-[var(--foreground-muted)]">{industry}</li>
+                    <li
+                      key={industry}
+                      className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface-elevated)] px-4 py-3 text-sm font-semibold text-[var(--foreground-muted)]"
+                    >
+                      {industry}
+                    </li>
                   ))}
                 </ul>
               </div>
               <Card className="p-7 sm:p-9">
                 <Icon icon={ShieldCheck} size="md" />
-                <h2 className="mt-5 font-display text-2xl font-bold text-[var(--foreground)]">No unrelated success story is presented.</h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">The current QCSV source material does not confirm a Quality Assurance success story. This page keeps the evidence boundary clear.</p>
+                <h2 className="mt-5 font-display text-2xl font-bold text-[var(--foreground)]">
+                  No unrelated success story is presented.
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">
+                  The current QCSV source material does not confirm a Quality
+                  Assurance success story. This page keeps the evidence boundary
+                  clear.
+                </p>
               </Card>
             </div>
           </Container>
@@ -276,7 +317,12 @@ export default function QualityAssurancePage() {
                 title="Discuss your quality assurance needs with QCSV."
                 description="Connect with QCSV to discuss quality-system support for your technology or validation initiative."
               />
-              <Link href="/#contact" className="mt-8 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]">Talk to QCSV</Link>
+              <Link
+                href="/#contact"
+                className="mt-8 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+              >
+                Talk to QCSV
+              </Link>
             </div>
           </Container>
         </Section>

@@ -9,34 +9,34 @@ const navigation = [
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Success Stories", href: "/success-stories" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 const services = [
   {
     label: "Computer System Validation",
-    href: "/services/computer-system-validation",
+    href: "/services/computer-system-validation"
   },
   {
     label: "Quality Assurance",
-    href: "/services/quality-assurance",
+    href: "/services/quality-assurance"
   },
   {
     label: "SAP Services",
-    href: "/services/sap-services",
+    href: "/services/sap-services"
   },
   {
     label: "Cloud Services",
-    href: "/services/cloud-services",
+    href: "/services/cloud-services"
   },
   {
     label: "Project Management",
-    href: "/services/project-management",
+    href: "/services/project-management"
   },
   {
     label: "Website Development",
-    href: "/services/website-development",
-  },
+    href: "/services/website-development"
+  }
 ];
 
 export function Footer() {
@@ -71,7 +71,10 @@ export function Footer() {
               Navigation
             </h2>
 
-            <nav className="mt-4 flex flex-col gap-3" aria-label="Footer navigation">
+            <nav
+              className="mt-4 flex flex-col gap-3"
+              aria-label="Footer navigation"
+            >
               {navigation.map((item) => (
                 <Link
                   key={item.href}
@@ -89,7 +92,10 @@ export function Footer() {
               Services
             </h2>
 
-            <nav className="mt-4 flex flex-col gap-3" aria-label="Footer services">
+            <nav
+              className="mt-4 flex flex-col gap-3"
+              aria-label="Footer services"
+            >
               {services.map((service) => (
                 <Link
                   key={service.href}

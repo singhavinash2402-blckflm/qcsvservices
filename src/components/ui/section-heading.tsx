@@ -11,12 +11,9 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
-  align = "left",
+  align = "left"
 }: SectionHeadingProps) {
-  const alignment =
-    align === "center"
-      ? "mx-auto text-center"
-      : "text-left";
+  const alignment = align === "center" ? "mx-auto text-center" : "text-left";
 
   return (
     <div className={`max-w-3xl ${alignment}`}>

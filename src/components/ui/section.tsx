@@ -7,7 +7,7 @@ type SectionProps = HTMLAttributes<HTMLElement> & {
 const spacingClasses = {
   compact: "py-12 md:py-16",
   default: "qcsv-section",
-  large: "py-24 md:py-32",
+  large: "py-24 md:py-32"
 };
 
 export function Section({
@@ -16,9 +16,6 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section
-      className={`${spacingClasses[spacing]} ${className}`}
-      {...props}
-    />
+    <section className={`${spacingClasses[spacing]} ${className}`} {...props} />
   );
 }

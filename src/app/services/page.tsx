@@ -12,7 +12,7 @@ import {
   Network,
   ShieldCheck,
   Users,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -47,27 +47,27 @@ const serviceGroups: ServiceGroup[] = [
         name: "Computer System Validation",
         description:
           "Validation support for computerized systems and related project activities.",
-        icon: ClipboardCheck,
+        icon: ClipboardCheck
       },
       {
         name: "Quality Assurance",
         description:
           "Quality assurance support for structured technology and project delivery.",
-        icon: ShieldCheck,
+        icon: ShieldCheck
       },
       {
         name: "IT Infrastructure Qualification",
         description:
           "Qualification support for IT infrastructure and technology environments.",
-        icon: HardDrive,
+        icon: HardDrive
       },
       {
         name: "Audits / Assessments",
         description:
           "Structured audits and assessments for technology and quality activities.",
-        icon: Gauge,
-      },
-    ],
+        icon: Gauge
+      }
+    ]
   },
   {
     title: "Enterprise Technology",
@@ -78,27 +78,27 @@ const serviceGroups: ServiceGroup[] = [
         name: "SAP Services",
         description:
           "Services supporting SAP environments and related technology initiatives.",
-        icon: Layers3,
+        icon: Layers3
       },
       {
         name: "Manufacturing Execution Systems",
         description:
           "Support for manufacturing execution systems and associated project needs.",
-        icon: Workflow,
+        icon: Workflow
       },
       {
         name: "Serialization",
         description:
           "Serialization services for technology and product traceability initiatives.",
-        icon: Network,
+        icon: Network
       },
       {
         name: "Cloud Services",
         description:
           "Cloud services supporting technology environments and modernization work.",
-        icon: Cloud,
-      },
-    ],
+        icon: Cloud
+      }
+    ]
   },
   {
     title: "Project Delivery",
@@ -109,21 +109,21 @@ const serviceGroups: ServiceGroup[] = [
         name: "Project Management",
         description:
           "Project planning, coordination and delivery support for technology initiatives.",
-        icon: FolderKanban,
+        icon: FolderKanban
       },
       {
         name: "Project Documentation",
         description:
           "Structured documentation support throughout project activities and delivery.",
-        icon: FileCheck2,
+        icon: FileCheck2
       },
       {
         name: "IT Staffing",
         description:
           "IT staffing support aligned with project and delivery requirements.",
-        icon: Users,
-      },
-    ],
+        icon: Users
+      }
+    ]
   },
   {
     title: "Digital",
@@ -134,10 +134,10 @@ const serviceGroups: ServiceGroup[] = [
         name: "Website Development",
         description:
           "Website development support for modern business and technology needs.",
-        icon: Code2,
-      },
-    ],
-  },
+        icon: Code2
+      }
+    ]
+  }
 ];
 
 const industries = [
@@ -145,7 +145,7 @@ const industries = [
   "Medical Devices",
   "Life Sciences",
   "Semiconductor",
-  "Regulated Manufacturing",
+  "Regulated Manufacturing"
 ];
 
 export default function ServicesPage() {

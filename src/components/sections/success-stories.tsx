@@ -3,7 +3,7 @@ import {
   FileCheck2,
   FlaskConical,
   HardDrive,
-  Layers3,
+  Layers3
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,44 +19,44 @@ const successStories = [
     title: "SAP Validation",
     location: "UK",
     industry: "Pharmaceuticals",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     title: "SAP Technical Upgrade",
     location: "US",
     industry: "Semiconductor",
-    icon: Layers3,
+    icon: Layers3
   },
   {
     title: "LIMS Validation",
     location: "US",
     industry: "Pharmaceuticals",
-    icon: FlaskConical,
+    icon: FlaskConical
   },
   {
     title: "Equipment Qualification",
     location: "Israel",
     industry: "Medical Devices",
-    icon: HardDrive,
+    icon: HardDrive
   },
   {
     title: "SAP GAP Assessment",
     location: "Israel",
     industry: "Pharmaceuticals",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     title: "SOP Preparation",
     location: "Israel",
     industry: "Pharmaceuticals",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     title: "Empower 3 Validation",
     location: "US",
     industry: "Pharmaceuticals",
-    icon: ClipboardCheck,
-  },
+    icon: ClipboardCheck
+  }
 ];
 
 export function SuccessStories() {

@@ -5,7 +5,7 @@ import {
   Lightbulb,
   SearchCheck,
   Target,
-  Workflow,
+  Workflow
 } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
@@ -20,50 +20,50 @@ const steps = [
     title: "Understand",
     description:
       "Understand business objectives, technology landscape and project requirements.",
-    icon: Lightbulb,
+    icon: Lightbulb
   },
   {
     number: "02",
     title: "Assess",
     description:
       "Assess current processes, systems, risks and applicable quality requirements.",
-    icon: SearchCheck,
+    icon: SearchCheck
   },
   {
     number: "03",
     title: "Plan",
     description:
       "Define the delivery approach, scope, responsibilities and project priorities.",
-    icon: Target,
+    icon: Target
   },
   {
     number: "04",
     title: "Execute",
     description:
       "Execute project activities with structured coordination and quality-focused delivery.",
-    icon: Workflow,
+    icon: Workflow
   },
   {
     number: "05",
     title: "Validate",
     description:
       "Perform validation and qualification activities appropriate to the project.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     number: "06",
     title: "Document",
     description:
       "Maintain clear and structured documentation throughout the engagement.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     number: "07",
     title: "Deliver",
     description:
       "Complete the engagement with an organized handover and delivery outcome.",
-    icon: Flag,
-  },
+    icon: Flag
+  }
 ];
 
 export function Methodology() {

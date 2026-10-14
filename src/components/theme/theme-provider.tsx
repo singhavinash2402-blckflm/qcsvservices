@@ -3,7 +3,7 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export function ThemeProvider({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {

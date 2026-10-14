@@ -98,14 +98,14 @@ Do not change the build strategy without an explicit technical decision.
 The global application structure is:
 
 Root Layout
-  |
-  +-- Theme Provider
-  |
-  +-- Header
-  |
-  +-- Page Content
-  |
-  +-- Footer
+|
++-- Theme Provider
+|
++-- Header
+|
++-- Page Content
+|
++-- Footer
 
 The application must maintain consistent:
 
@@ -473,17 +473,17 @@ Individual service pages should maintain a consistent structure.
 Typical structure:
 
 Page Hero
-  |
+|
 Service Introduction
-  |
+|
 Capabilities / Areas of Focus
-  |
+|
 Approach / Delivery Context
-  |
+|
 Relevant Supporting Content
-  |
+|
 Related Success Story where appropriate
-  |
+|
 CTA
 
 The exact sections may vary depending on approved content.

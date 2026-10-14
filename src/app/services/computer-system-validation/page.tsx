@@ -8,7 +8,7 @@ import {
   Lightbulb,
   SearchCheck,
   Target,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -31,38 +31,38 @@ const capabilities: Capability[] = [
     title: "Validation planning and execution",
     description:
       "Structured support for planning and carrying out validation activities with attention to intended use and system risk.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     title: "Requirements and validation documentation",
     description:
       "Clear documentation support for requirements, validation activities and the decisions that shape the work.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     title: "Risk-based assessment",
     description:
       "Assessment support focused on intended use, system risk and the appropriate level of validation activity.",
-    icon: SearchCheck,
+    icon: SearchCheck
   },
   {
     title: "Testing and verification",
     description:
       "Testing and verification support for computerized system activities and documented evidence.",
-    icon: FlaskConical,
+    icon: FlaskConical
   },
   {
     title: "Validation lifecycle documentation",
     description:
       "Organized documentation support throughout the validation lifecycle, including controlled changes.",
-    icon: HardDrive,
+    icon: HardDrive
   },
   {
     title: "Quality-focused project support",
     description:
       "Project support that keeps quality, data integrity considerations and clear coordination in view.",
-    icon: Target,
-  },
+    icon: Target
+  }
 ];
 
 const approach = [
@@ -71,57 +71,57 @@ const approach = [
     title: "Understand",
     description:
       "Understand business objectives, technology landscape and project requirements.",
-    icon: Lightbulb,
+    icon: Lightbulb
   },
   {
     number: "02",
     title: "Assess",
     description:
       "Assess current processes, systems, risks and applicable quality requirements.",
-    icon: SearchCheck,
+    icon: SearchCheck
   },
   {
     number: "03",
     title: "Plan",
     description:
       "Define the delivery approach, scope, responsibilities and project priorities.",
-    icon: Target,
+    icon: Target
   },
   {
     number: "04",
     title: "Execute",
     description:
       "Execute project activities with structured coordination and quality-focused delivery.",
-    icon: Workflow,
+    icon: Workflow
   },
   {
     number: "05",
     title: "Validate",
     description:
       "Perform validation and qualification activities appropriate to the project.",
-    icon: ClipboardCheck,
+    icon: ClipboardCheck
   },
   {
     number: "06",
     title: "Document",
     description:
       "Maintain clear and structured documentation throughout the engagement.",
-    icon: FileCheck2,
+    icon: FileCheck2
   },
   {
     number: "07",
     title: "Deliver",
     description:
       "Complete the engagement with an organized handover and delivery outcome.",
-    icon: Flag,
-  },
+    icon: Flag
+  }
 ];
 
 const industries = [
   "Pharmaceuticals",
   "Medical Devices",
   "Life Sciences",
-  "Regulated Manufacturing",
+  "Regulated Manufacturing"
 ];
 
 const relatedStories = [
@@ -130,8 +130,8 @@ const relatedStories = [
   {
     title: "Empower 3 Validation",
     location: "US",
-    industry: "Pharmaceuticals",
-  },
+    industry: "Pharmaceuticals"
+  }
 ];
 
 export default function ComputerSystemValidationPage() {
@@ -177,7 +177,8 @@ export default function ComputerSystemValidationPage() {
                   A structured foundation for validation work.
                 </h2>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--foreground-muted)]">
-                  QCSV supports the planning, assessment, testing and documentation activities that make up a validation engagement.
+                  QCSV supports the planning, assessment, testing and
+                  documentation activities that make up a validation engagement.
                 </p>
               </Card>
             </div>
@@ -232,10 +233,22 @@ export default function ComputerSystemValidationPage() {
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Intended use", "Keep the system purpose and context visible when planning validation activities."],
-                ["System risk", "Use risk considerations to help shape appropriate assessment and verification."],
-                ["Lifecycle records", "Maintain documentation across planning, testing, changes and delivery."],
-                ["Data integrity", "Keep data integrity considerations visible within the confirmed project scope."],
+                [
+                  "Intended use",
+                  "Keep the system purpose and context visible when planning validation activities."
+                ],
+                [
+                  "System risk",
+                  "Use risk considerations to help shape appropriate assessment and verification."
+                ],
+                [
+                  "Lifecycle records",
+                  "Maintain documentation across planning, testing, changes and delivery."
+                ],
+                [
+                  "Data integrity",
+                  "Keep data integrity considerations visible within the confirmed project scope."
+                ]
               ].map(([title, description]) => (
                 <Card key={title} className="p-6">
                   <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">

@@ -12,7 +12,7 @@ const variantClasses: Record<BadgeVariant, string> = {
   primary:
     "border border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary)]",
   success:
-    "border border-[var(--accent)]/20 bg-[var(--accent)]/10 text-[var(--accent)]",
+    "border border-[var(--accent)]/20 bg-[var(--accent)]/10 text-[var(--accent)]"
 };
 
 export function Badge({

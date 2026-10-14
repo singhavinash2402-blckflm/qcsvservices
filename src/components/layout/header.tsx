@@ -11,7 +11,7 @@ const navigation = [
   { label: "Industries", href: "/industries" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export function Header() {
@@ -125,10 +125,7 @@ export function Header() {
               className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
-              <ArrowRight
-                aria-hidden="true"
-                className="ml-2 h-4 w-4"
-              />
+              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
             <MobileNavigation />
           </div>

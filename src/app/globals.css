@@ -105,11 +105,7 @@ body {
   }
 
   .qcsv-gradient-text {
-    background: linear-gradient(
-      135deg,
-      var(--primary),
-      var(--secondary)
-    );
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

@@ -10,7 +10,7 @@ import {
   Network,
   ShieldCheck,
   Users,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,27 +32,27 @@ const serviceGroups = [
         name: "Computer System Validation",
         description:
           "Support for validating computerized systems in regulated environments.",
-        icon: ClipboardCheck,
+        icon: ClipboardCheck
       },
       {
         name: "Quality Assurance",
         description:
           "Quality-focused practices supporting compliant and controlled technology delivery.",
-        icon: ShieldCheck,
+        icon: ShieldCheck
       },
       {
         name: "IT Infrastructure Qualification",
         description:
           "Qualification support for IT infrastructure and technology environments.",
-        icon: HardDrive,
+        icon: HardDrive
       },
       {
         name: "Audits / Assessments",
         description:
           "Structured assessments to evaluate technology, quality and compliance requirements.",
-        icon: Gauge,
-      },
-    ],
+        icon: Gauge
+      }
+    ]
   },
   {
     title: "Enterprise Technology",
@@ -63,27 +63,27 @@ const serviceGroups = [
         name: "SAP Services",
         description:
           "SAP-focused services supporting enterprise technology and regulated operations.",
-        icon: Layers3,
+        icon: Layers3
       },
       {
         name: "Manufacturing Execution Systems",
         description:
           "MES support for technology-enabled manufacturing environments.",
-        icon: Workflow,
+        icon: Workflow
       },
       {
         name: "Serialization",
         description:
           "Serialization support for traceability and regulated product environments.",
-        icon: Network,
+        icon: Network
       },
       {
         name: "Cloud Services",
         description:
           "Cloud-focused services supporting scalable and modern technology environments.",
-        icon: Cloud,
-      },
-    ],
+        icon: Cloud
+      }
+    ]
   },
   {
     title: "Project Delivery",
@@ -94,21 +94,21 @@ const serviceGroups = [
         name: "Project Management",
         description:
           "Project planning, coordination and delivery support across technology initiatives.",
-        icon: FolderKanban,
+        icon: FolderKanban
       },
       {
         name: "Project Documentation",
         description:
           "Structured documentation supporting project execution, quality and compliance.",
-        icon: FileCheck2,
+        icon: FileCheck2
       },
       {
         name: "IT Staffing",
         description:
           "Flexible technology staffing support aligned with project and delivery needs.",
-        icon: Users,
-      },
-    ],
+        icon: Users
+      }
+    ]
   },
   {
     title: "Digital",
@@ -119,21 +119,21 @@ const serviceGroups = [
         name: "Website Development",
         description:
           "Professional website development for modern business and technology needs.",
-        icon: Code2,
-      },
-    ],
-  },
+        icon: Code2
+      }
+    ]
+  }
 ];
 
 export function Services() {
   return (
     <Section id="services">
       <Container>
-<SectionHeading
-  eyebrow="OUR SERVICES"
-  title="Technology and quality expertise for regulated environments."
-  description="QCSV provides validation, quality, enterprise technology and project delivery services designed to support organizations across regulated and technology-driven environments."
-/>
+        <SectionHeading
+          eyebrow="OUR SERVICES"
+          title="Technology and quality expertise for regulated environments."
+          description="QCSV provides validation, quality, enterprise technology and project delivery services designed to support organizations across regulated and technology-driven environments."
+        />
         <div className="relative mt-10 h-48 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] sm:h-56 lg:h-64">
           <Image
             src="/images/services/services-overview.jpg"

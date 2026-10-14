@@ -14,7 +14,7 @@ import {
   LockKeyhole,
   SearchCheck,
   Target,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -29,7 +29,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export const metadata: Metadata = {
   title: "Website Development",
   description:
-    "Structured website development support for credible, maintainable digital experiences.",
+    "Structured website development support for credible, maintainable digital experiences."
 };
 
 type Capability = {
@@ -43,82 +43,140 @@ const capabilities: Capability[] = [
     title: "Corporate and enterprise websites",
     description:
       "Structured website development support for professional corporate and enterprise digital experiences.",
-    icon: LayoutTemplate,
+    icon: LayoutTemplate
   },
   {
     title: "Responsive web experiences",
     description:
       "Support for experiences designed to work across desktop, tablet and mobile contexts.",
-    icon: Accessibility,
+    icon: Accessibility
   },
   {
     title: "Information architecture",
     description:
       "Organization of page structure, navigation and content so the experience is clear to its intended audience.",
-    icon: GitBranch,
+    icon: GitBranch
   },
   {
     title: "Modern web development",
     description:
       "Frontend and web-development support within the technology scope confirmed for the project.",
-    icon: Code2,
+    icon: Code2
   },
   {
     title: "Integration-ready architecture",
     description:
       "Planning and implementation support that keeps future integration needs visible without assuming a specific system.",
-    icon: Workflow,
+    icon: Workflow
   },
   {
     title: "Accessibility-conscious development",
     description:
       "Development that considers accessibility as part of content, structure, interaction and testing discussions.",
-    icon: Accessibility,
+    icon: Accessibility
   },
   {
     title: "Security-conscious development",
     description:
       "Security considerations kept visible throughout the confirmed development and delivery scope.",
-    icon: LockKeyhole,
+    icon: LockKeyhole
   },
   {
     title: "Performance-conscious implementation",
     description:
       "Implementation planning that considers performance without promising a particular score or result.",
-    icon: Gauge,
+    icon: Gauge
   },
   {
     title: "Testing and quality validation",
     description:
       "Testing and review activities appropriate to the agreed website requirements and delivery scope.",
-    icon: CheckCircle2,
+    icon: CheckCircle2
   },
   {
     title: "Deployment and enhancement",
     description:
       "Deployment and ongoing enhancement support where those responsibilities are confirmed for the engagement.",
-    icon: Target,
-  },
+    icon: Target
+  }
 ];
 
 const deliverables = [
-  ["Discovery record", "A documented starting point for requirements, audience and project scope."],
-  ["Information architecture", "A structured view of content, navigation and page relationships."],
-  ["Website implementation", "The agreed web experience developed within the confirmed technology scope."],
-  ["Testing record", "Documentation of testing and quality-review activities applicable to the project."],
-  ["Deployment handover", "Handover information for deployment and next steps where included in scope."],
-  ["Enhancement plan", "A basis for ongoing improvement discussions where continued support is confirmed."],
+  [
+    "Discovery record",
+    "A documented starting point for requirements, audience and project scope."
+  ],
+  [
+    "Information architecture",
+    "A structured view of content, navigation and page relationships."
+  ],
+  [
+    "Website implementation",
+    "The agreed web experience developed within the confirmed technology scope."
+  ],
+  [
+    "Testing record",
+    "Documentation of testing and quality-review activities applicable to the project."
+  ],
+  [
+    "Deployment handover",
+    "Handover information for deployment and next steps where included in scope."
+  ],
+  [
+    "Enhancement plan",
+    "A basis for ongoing improvement discussions where continued support is confirmed."
+  ]
 ];
 
 const approach = [
-  ["01", "Discovery and requirements", "Understand the organization, audience, objectives and website requirements.", Lightbulb],
-  ["02", "Information architecture", "Organize content, navigation and page relationships for the intended experience.", GitBranch],
-  ["03", "UX/UI design", "Shape the experience and interface direction within the confirmed design scope.", LayoutTemplate],
-  ["04", "Development", "Build the website within the agreed project and technology boundaries.", Code2],
-  ["05", "Integration", "Coordinate integration needs where systems and responsibilities are confirmed.", Workflow],
-  ["06", "Testing and validation", "Review the experience against agreed requirements and quality considerations.", ClipboardCheck],
-  ["07", "Deployment", "Coordinate deployment activities where deployment responsibility is included in scope.", Flag],
-  ["08", "Continuous improvement", "Discuss ongoing enhancement based on confirmed priorities and support needs.", Target],
+  [
+    "01",
+    "Discovery and requirements",
+    "Understand the organization, audience, objectives and website requirements.",
+    Lightbulb
+  ],
+  [
+    "02",
+    "Information architecture",
+    "Organize content, navigation and page relationships for the intended experience.",
+    GitBranch
+  ],
+  [
+    "03",
+    "UX/UI design",
+    "Shape the experience and interface direction within the confirmed design scope.",
+    LayoutTemplate
+  ],
+  [
+    "04",
+    "Development",
+    "Build the website within the agreed project and technology boundaries.",
+    Code2
+  ],
+  [
+    "05",
+    "Integration",
+    "Coordinate integration needs where systems and responsibilities are confirmed.",
+    Workflow
+  ],
+  [
+    "06",
+    "Testing and validation",
+    "Review the experience against agreed requirements and quality considerations.",
+    ClipboardCheck
+  ],
+  [
+    "07",
+    "Deployment",
+    "Coordinate deployment activities where deployment responsibility is included in scope.",
+    Flag
+  ],
+  [
+    "08",
+    "Continuous improvement",
+    "Discuss ongoing enhancement based on confirmed priorities and support needs.",
+    Target
+  ]
 ] as const;
 
 const industries = [
@@ -126,7 +184,7 @@ const industries = [
   "Medical Devices",
   "Life Sciences",
   "Semiconductor",
-  "Regulated Manufacturing",
+  "Regulated Manufacturing"
 ];
 
 export default function WebsiteDevelopmentPage() {
@@ -172,7 +230,9 @@ export default function WebsiteDevelopmentPage() {
                   Digital experiences built around clarity and care.
                 </h2>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--foreground-muted)]">
-                  Website work can bring together content structure, responsive implementation, testing, quality review and deployment planning.
+                  Website work can bring together content structure, responsive
+                  implementation, testing, quality review and deployment
+                  planning.
                 </p>
               </Card>
             </div>
@@ -227,10 +287,22 @@ export default function WebsiteDevelopmentPage() {
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Structured content", "Make information architecture and content relationships clear."],
-                ["Responsive experience", "Consider desktop, tablet and mobile use throughout the work."],
-                ["Quality review", "Include testing and quality validation appropriate to the requirements."],
-                ["Ongoing enhancement", "Plan future improvements only where continued support is confirmed."],
+                [
+                  "Structured content",
+                  "Make information architecture and content relationships clear."
+                ],
+                [
+                  "Responsive experience",
+                  "Consider desktop, tablet and mobile use throughout the work."
+                ],
+                [
+                  "Quality review",
+                  "Include testing and quality validation appropriate to the requirements."
+                ],
+                [
+                  "Ongoing enhancement",
+                  "Plan future improvements only where continued support is confirmed."
+                ]
               ].map(([title, description]) => (
                 <Card key={title} className="p-6">
                   <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">
@@ -325,7 +397,9 @@ export default function WebsiteDevelopmentPage() {
                   No unrelated success story is presented.
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">
-                  The current QCSV source material does not confirm a Website Development success story. This page does not infer portfolio details, client outcomes or technology experience.
+                  The current QCSV source material does not confirm a Website
+                  Development success story. This page does not infer portfolio
+                  details, client outcomes or technology experience.
                 </p>
               </Card>
             </div>

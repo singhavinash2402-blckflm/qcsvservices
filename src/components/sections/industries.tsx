@@ -3,7 +3,7 @@ import {
   FlaskConical,
   HeartPulse,
   Microchip,
-  ShieldCheck,
+  ShieldCheck
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,7 +21,7 @@ const industries = [
     image: "/images/industries/pharmaceuticals.jpg",
     description:
       "Technology, validation and quality support for pharmaceutical environments.",
-    icon: FlaskConical,
+    icon: FlaskConical
   },
   {
     name: "Medical Devices",
@@ -29,7 +29,7 @@ const industries = [
     image: "/images/industries/medical-devices.jpg",
     description:
       "Quality and technology support for medical device organizations and regulated systems.",
-    icon: HeartPulse,
+    icon: HeartPulse
   },
   {
     name: "Life Sciences",
@@ -37,7 +37,7 @@ const industries = [
     image: "/images/industries/life-sciences.jpg",
     description:
       "Technology and validation expertise supporting life sciences operations.",
-    icon: ShieldCheck,
+    icon: ShieldCheck
   },
   {
     name: "Semiconductor",
@@ -45,7 +45,7 @@ const industries = [
     image: "/images/industries/semiconductor.jpg",
     description:
       "Technology and project support for semiconductor and technology-driven manufacturing.",
-    icon: Microchip,
+    icon: Microchip
   },
   {
     name: "Regulated Manufacturing",
@@ -53,8 +53,8 @@ const industries = [
     image: "/images/industries/regulated-manufacturing.jpg",
     description:
       "Technology, quality and delivery support for regulated manufacturing environments.",
-    icon: Factory,
-  },
+    icon: Factory
+  }
 ];
 
 export function Industries() {
@@ -73,7 +73,10 @@ export function Industries() {
               href={industry.href}
               className="block h-full rounded-[var(--radius-md)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
             >
-              <Card interactive className="flex h-full flex-col overflow-hidden p-0">
+              <Card
+                interactive
+                className="flex h-full flex-col overflow-hidden p-0"
+              >
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src={industry.image}
@@ -87,13 +90,13 @@ export function Industries() {
                 <div className="flex flex-1 flex-col p-6">
                   <Icon icon={industry.icon} size="md" />
 
-                <h3 className="mt-5 font-display text-xl font-semibold text-[var(--foreground)]">
-                  {industry.name}
-                </h3>
+                  <h3 className="mt-5 font-display text-xl font-semibold text-[var(--foreground)]">
+                    {industry.name}
+                  </h3>
 
-                <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
-                  {industry.description}
-                </p>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
+                    {industry.description}
+                  </p>
                 </div>
               </Card>
             </Link>
