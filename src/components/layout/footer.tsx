@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 const navigation = [
@@ -45,25 +45,25 @@ export function Footer() {
       <div className="qcsv-container-wide">
         <div className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="lg:col-span-1">
-            <Link
+            <ScrollLink
               href="/"
               className="font-display text-xl font-bold tracking-tight text-[var(--foreground)]"
             >
               QCSV<span className="text-[var(--primary-text)]">.</span>
-            </Link>
+            </ScrollLink>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--foreground-muted)]">
               Technology, validation and quality expertise for regulated
               environments.
             </p>
 
-            <Link
+            <ScrollLink
               href="/#contact"
               className="mt-6 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-            </Link>
+            </ScrollLink>
           </div>
 
           <div>
@@ -76,13 +76,13 @@ export function Footer() {
               aria-label="Footer navigation"
             >
               {navigation.map((item) => (
-                <Link
+                <ScrollLink
                   key={item.href}
                   href={item.href}
                   className="text-sm text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
                 >
                   {item.label}
-                </Link>
+                </ScrollLink>
               ))}
             </nav>
           </div>
@@ -97,13 +97,13 @@ export function Footer() {
               aria-label="Footer services"
             >
               {services.map((service) => (
-                <Link
+                <ScrollLink
                   key={service.href}
                   href={service.href}
                   className="text-sm text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
                 >
                   {service.label}
-                </Link>
+                </ScrollLink>
               ))}
             </nav>
           </div>

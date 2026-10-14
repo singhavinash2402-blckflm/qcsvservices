@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/config/home";
 
@@ -52,18 +52,18 @@ export function Hero() {
           prepare the documentation that goes with them.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link
+          <ScrollLink
             href="/#contact"
             className="inline-flex min-h-12 items-center rounded-full bg-white px-7 text-sm font-semibold text-[#0b0f14] transition-transform hover:scale-[1.03]"
           >
             Request a consultation
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             href="/services"
             className="inline-flex min-h-12 items-center rounded-full border-2 border-white px-7 text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
             Explore services
-          </Link>
+          </ScrollLink>
         </div>
 
         <div className="mt-10 flex gap-2" role="group" aria-label="Hero image">
