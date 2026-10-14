@@ -39,7 +39,7 @@ export function Header() {
             className="shrink-0 rounded-md font-display text-xl font-bold tracking-tight text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
             aria-label="QCSV Services home"
           >
-            QCSV<span className="text-[var(--primary)]">.</span>
+            QCSV Services
           </Link>
 
           <nav
@@ -84,7 +84,7 @@ export function Header() {
                 >
                   {serviceGroups.map((group) => (
                     <div key={group.title}>
-                      <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+                      <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
                         {group.title}
                       </div>
                       <div className="mt-1.5">
@@ -124,7 +124,7 @@ export function Header() {
               href="/#contact"
               className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
-              Start a conversation
+              Request a consultation
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
             <MobileNavigation />

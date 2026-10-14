@@ -12,7 +12,7 @@ export function FinalCTA() {
           <div className="qcsv-ambient-glow -right-32 -top-32" />
 
           <div className="relative z-10 max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary-text)]">
               LET&apos;S WORK TOGETHER
             </p>
 

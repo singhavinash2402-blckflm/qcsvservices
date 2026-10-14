@@ -100,7 +100,7 @@ export function MobileNavigation() {
                 >
                   {serviceGroups.map((group) => (
                     <div key={group.title} className="pt-3">
-                      <div className="px-4 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+                      <div className="px-4 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
                         {group.title}
                       </div>
                       <div className="mt-1">

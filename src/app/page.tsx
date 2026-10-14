@@ -1,4 +1,4 @@
-﻿import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/sections/hero";
 import { Services } from "@/components/sections/services";

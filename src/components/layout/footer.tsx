@@ -49,7 +49,7 @@ export function Footer() {
               href="/"
               className="font-display text-xl font-bold tracking-tight text-[var(--foreground)]"
             >
-              QCSV<span className="text-[var(--primary)]">.</span>
+              QCSV<span className="text-[var(--primary-text)]">.</span>
             </Link>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--foreground-muted)]">

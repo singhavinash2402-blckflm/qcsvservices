@@ -1,4 +1,4 @@
-﻿import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 type IconProps = {
   icon: LucideIcon;
@@ -30,7 +30,7 @@ export function Icon({
 
   return (
     <span
-      className={`inline-flex items-center justify-center border border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary)] ${sizes.container} ${className}`}
+      className={`inline-flex items-center justify-center border border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary-text)] ${sizes.container} ${className}`}
     >
       <IconComponent aria-hidden="true" className={sizes.icon} />
     </span>

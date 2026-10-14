@@ -1,4 +1,4 @@
-﻿# QCSV Services Website
+# QCSV Services Website
 
 ## 1. Project Overview
 

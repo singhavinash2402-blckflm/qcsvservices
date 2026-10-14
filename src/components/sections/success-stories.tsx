@@ -74,7 +74,7 @@ export function SuccessStories() {
 
           <Link
             href="/success-stories"
-            className="inline-flex shrink-0 items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
+            className="inline-flex shrink-0 items-center text-sm font-semibold text-[var(--primary-text)] transition-colors hover:text-[var(--primary-hover)]"
           >
             View all success stories
             <span aria-hidden="true" className="ml-2">
@@ -114,7 +114,7 @@ export function SuccessStories() {
 
               <Link
                 href="/success-stories"
-                className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
+                className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary-text)] transition-colors hover:text-[var(--primary-hover)]"
               >
                 Read case study
                 <span aria-hidden="true" className="ml-2">

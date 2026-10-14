@@ -174,7 +174,7 @@ export function Services() {
                         {service.description}
                       </p>
 
-                      <span className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors group-hover:text-[var(--primary-hover)]">
+                      <span className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary-text)] transition-colors group-hover:text-[var(--primary-hover)]">
                         Learn more
                         <span aria-hidden="true" className="ml-2">
                           →

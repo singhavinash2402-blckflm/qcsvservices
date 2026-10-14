@@ -1,4 +1,4 @@
-﻿# QCSV Services - Project Guidelines
+# QCSV Services - Project Guidelines
 
 ## 1. Project Overview
 

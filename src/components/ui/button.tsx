@@ -1,4 +1,4 @@
-﻿import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 
@@ -23,7 +23,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={`inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-[var(--radius-full)] px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] disabled:pointer-events-none disabled:opacity-50 ${variantClasses[variant]} ${className}`}
       {...props}
     />
   );

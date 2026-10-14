@@ -1,4 +1,4 @@
-﻿import type { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
 type BadgeVariant = "default" | "primary" | "success";
 
@@ -10,7 +10,7 @@ const variantClasses: Record<BadgeVariant, string> = {
   default:
     "border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground-muted)]",
   primary:
-    "border border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary)]",
+    "border border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary-text)]",
   success:
     "border border-[var(--accent)]/20 bg-[var(--accent)]/10 text-[var(--accent)]"
 };

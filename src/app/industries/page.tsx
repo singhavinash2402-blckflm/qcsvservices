@@ -108,7 +108,7 @@ export default function IndustriesPage() {
                     <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
                       {industry.description}
                     </p>
-                    <span className="mt-6 text-sm font-semibold text-[var(--primary)]">
+                    <span className="mt-6 text-sm font-semibold text-[var(--primary-text)]">
                       Explore industry <span aria-hidden="true">→</span>
                     </span>
                   </Card>

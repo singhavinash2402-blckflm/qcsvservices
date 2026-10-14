@@ -1,4 +1,4 @@
-﻿# QCSV Services - System Interface Specification
+# QCSV Services - System Interface Specification
 
 ## 1. Purpose
 

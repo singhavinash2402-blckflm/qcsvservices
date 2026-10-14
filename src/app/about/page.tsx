@@ -123,7 +123,7 @@ export default function AboutPage() {
                     <p className="mt-3 flex-1 text-sm leading-6 text-[var(--foreground-muted)]">
                       {description}
                     </p>
-                    <span className="mt-6 text-sm font-semibold text-[var(--primary)]">
+                    <span className="mt-6 text-sm font-semibold text-[var(--primary-text)]">
                       Explore focus area <span aria-hidden="true">→</span>
                     </span>
                   </Card>

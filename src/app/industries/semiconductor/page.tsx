@@ -112,7 +112,7 @@ export default function SemiconductorPage() {
                     <h2 className="mt-5 font-display text-lg font-semibold text-[var(--foreground)]">
                       {name}
                     </h2>
-                    <span className="mt-6 text-sm font-semibold text-[var(--primary)]">
+                    <span className="mt-6 text-sm font-semibold text-[var(--primary-text)]">
                       Explore service <span aria-hidden="true">→</span>
                     </span>
                   </Card>

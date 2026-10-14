@@ -178,7 +178,7 @@ export default function SuccessStoriesPage() {
                         <Link
                           key={name}
                           href={href}
-                          className="text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                          className="text-sm font-semibold text-[var(--primary-text)] transition-colors hover:text-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
                         >
                           {name}
                         </Link>

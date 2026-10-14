@@ -251,7 +251,7 @@ export default function ManufacturingExecutionSystemsPage() {
               {approach.map(([number, title, description, icon]) => (
                 <Card key={number} className="relative p-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold text-[var(--primary)]">
+                    <span className="font-mono text-xs font-semibold text-[var(--primary-text)]">
                       {number}
                     </span>
                     <Icon icon={icon} size="sm" />

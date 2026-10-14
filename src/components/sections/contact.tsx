@@ -42,7 +42,7 @@ export function Contact() {
 
             <div className="mt-8 space-y-5">
               <div className="flex items-start gap-4">
-                <span className="mt-0.5 text-[var(--primary)]">
+                <span className="mt-0.5 text-[var(--primary-text)]">
                   <Mail aria-hidden="true" className="h-5 w-5" />
                 </span>
 
@@ -57,7 +57,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="mt-0.5 text-[var(--primary)]">
+                <span className="mt-0.5 text-[var(--primary-text)]">
                   <Phone aria-hidden="true" className="h-5 w-5" />
                 </span>
 
@@ -72,7 +72,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="mt-0.5 text-[var(--primary)]">
+                <span className="mt-0.5 text-[var(--primary-text)]">
                   <MessageSquare aria-hidden="true" className="h-5 w-5" />
                 </span>
 
