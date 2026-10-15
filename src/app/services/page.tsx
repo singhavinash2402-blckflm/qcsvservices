@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
+      <Header overlay />
 
       <main>
         <section className="relative isolate overflow-hidden bg-[#0b0f14] text-white">

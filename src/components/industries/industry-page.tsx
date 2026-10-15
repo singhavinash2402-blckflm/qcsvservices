@@ -15,7 +15,7 @@ export function IndustryPage({ industry }: Readonly<{ industry: Industry }>) {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
+      <Header overlay />
 
       <main>
         <PageHero

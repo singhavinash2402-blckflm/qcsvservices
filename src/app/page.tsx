@@ -11,7 +11,7 @@ import { Contact } from "@/components/sections/contact";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
+      <Header overlay />
 
       <main>
         <Hero />

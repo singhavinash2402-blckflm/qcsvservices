@@ -1,7 +1,6 @@
 "use client";
 
 import { ScrollLink } from "@/components/ui/scroll-link";
-import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { serviceGroups } from "@/config/service-catalog";
@@ -15,12 +14,13 @@ const navigation = [
   { label: "Contact", href: "/#contact" }
 ];
 
-export function Header() {
+export function Header({
+  overlay: overlayRequested = false
+}: Readonly<{ overlay?: boolean }>) {
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
-  const isHome = usePathname() === "/";
   const [scrolled, setScrolled] = useState(false);
-  const overlay = isHome && !scrolled;
+  const overlay = overlayRequested && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -44,10 +44,10 @@ export function Header() {
   return (
     <header
       data-overlay={overlay}
-      className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 border-b transition-colors duration-300 ${
+      className={`${overlayRequested ? "fixed inset-x-0" : "sticky"} top-0 z-50 border-b transition-colors duration-300 ${
         overlay
           ? "border-transparent bg-transparent"
-          : "border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-xl"
+          : "border-transparent bg-[var(--background)] shadow-[0_1px_0_var(--border)]"
       }`}
     >
       <div className="qcsv-container-wide">

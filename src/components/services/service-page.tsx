@@ -18,7 +18,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
+      <Header overlay />
 
       <main>
         <PageHero

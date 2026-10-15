@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
+      <Header overlay />
 
       <main>
         <PageHero
