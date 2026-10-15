@@ -18,6 +18,25 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   images: { formats: ["image/avif", "image/webp"] },
+  async redirects() {
+    return [
+      {
+        source: "/about/mission-vision",
+        destination: "/about#mission-vision",
+        permanent: false
+      },
+      {
+        source: "/about/our-approach",
+        destination: "/about#approach",
+        permanent: false
+      },
+      {
+        source: "/about/why-qcsv",
+        destination: "/about#why-qcsv",
+        permanent: false
+      }
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   }

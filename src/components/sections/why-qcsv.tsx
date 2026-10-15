@@ -1,17 +1,4 @@
-const reasons = [
-  {
-    title: "One agenda: yours.",
-    text: "We build long-lasting customer relationships and focus on your goals."
-  },
-  {
-    title: "Quality-assured delivery.",
-    text: "Our aim is to deliver the highest standard of quality-assured services through the expertise and commitment of our team."
-  },
-  {
-    title: "Solutions shaped to the project.",
-    text: "We aim to deliver result-oriented, cost-effective and project-specific solutions, whatever the nature, complexity or size of the project."
-  }
-];
+import { whyQcsv as reasons } from "@/config/about";
 
 export function WhyQcsv() {
   return (
