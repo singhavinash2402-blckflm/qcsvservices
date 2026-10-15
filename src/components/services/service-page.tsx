@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { CtaBand } from "@/components/shared/cta-band";
 import { PageHero } from "@/components/shared/page-hero";
 import { StoryGrid } from "@/components/shared/story-grid";
+import { ReadMore } from "@/components/ui/read-more";
 import { services, type Service } from "@/config/services";
 
 export function ServicePage({ service }: Readonly<{ service: Service }>) {
@@ -82,7 +83,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
               <Link
                 key={item.slug}
                 href={`/services/${item.slug}`}
-                className="rounded-3xl border border-[var(--border)] p-6 transition-colors hover:bg-[var(--surface)]"
+                className="group rounded-3xl border border-[var(--border)] p-6 transition-colors hover:bg-[var(--surface)]"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
                   {item.group}
@@ -93,6 +94,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
                 <p className="mt-2 text-sm text-[var(--foreground-muted)]">
                   {item.summary}
                 </p>
+                <ReadMore className="mt-4 text-[var(--foreground)]" />
               </Link>
             ))}
           </div>

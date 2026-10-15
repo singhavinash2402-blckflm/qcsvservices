@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { CtaBand } from "@/components/shared/cta-band";
 import { PageHero } from "@/components/shared/page-hero";
+import { ReadMore } from "@/components/ui/read-more";
 import { industries } from "@/config/industries";
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function IndustriesPage() {
                   <p className="mt-2 text-sm text-[var(--foreground-muted)]">
                     {industry.summary}
                   </p>
+                  <ReadMore className="mt-4 text-[var(--foreground)]" />
                 </div>
               </Link>
             ))}

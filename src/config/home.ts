@@ -11,21 +11,21 @@ export const homeServices = [
       "Computer system validation, IT infrastructure qualification and cloud validation.",
     tags: ["GAMP 5", "IQ OQ PQ", "Cloud"],
     image: "/images/services/validation-quality.jpg",
-    href: "/services/computer-system-validation"
+    href: "/services#validation-and-compliance"
   },
   {
     title: "Quality and audit",
     description: "Quality assurance, audits and project documentation.",
     tags: ["Data integrity", "GMP", "QMS"],
     image: "/images/industries/medical-devices.jpg",
-    href: "/services/quality-assurance"
+    href: "/services#quality-and-audit"
   },
   {
     title: "Regulated systems",
     description: "SAP, manufacturing execution systems and serialization.",
     tags: ["SAP S/4 HANA", "MES", "Serialization"],
     image: "/images/services/enterprise-technology.jpg",
-    href: "/services/sap-services"
+    href: "/services#regulated-systems"
   },
   {
     title: "Delivery and people",
@@ -33,7 +33,7 @@ export const homeServices = [
       "Project management and skilled IT staffing that scales with your project.",
     tags: [],
     image: "/images/services/project-delivery.jpg",
-    href: "/services/project-management"
+    href: "/services#delivery-and-people"
   }
 ] as const;
 

@@ -6,6 +6,9 @@ export const serviceGroupOrder = [
   "Digital"
 ] as const;
 
+export const serviceGroupId = (group: string) =>
+  group.toLowerCase().replace(/\s+/g, "-");
+
 export type ServiceGroup = (typeof serviceGroupOrder)[number];
 
 export type Service = {
@@ -153,7 +156,7 @@ export const services: Service[] = [
   {
     slug: "project-documentation",
     name: "Project Documentation",
-    group: "Quality and audit",
+    group: "Delivery and people",
     summary: "Lifecycle deliverables, SOPs, work instructions and manuals.",
     headline: "Project documentation across the software lifecycle",
     intro: [

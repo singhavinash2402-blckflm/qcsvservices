@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { ReadMore } from "@/components/ui/read-more";
 import { homeIndustries } from "@/config/home";
 
 export function Industries() {
@@ -23,7 +24,7 @@ export function Industries() {
               href={industry.href}
               onMouseEnter={() => setOpen(index)}
               onFocus={() => setOpen(index)}
-              className={`relative isolate flex min-h-[220px] items-end overflow-hidden rounded-[var(--radius-lg)] text-white lg:min-h-0 lg:flex-1 lg:transition-[flex] lg:duration-500 ${
+              className={`group relative isolate flex min-h-[220px] items-end overflow-hidden rounded-[var(--radius-lg)] text-white lg:min-h-0 lg:flex-1 lg:transition-[flex] lg:duration-500 ${
                 isOpen ? "lg:flex-[3.2]" : ""
               }`}
             >
@@ -49,6 +50,10 @@ export function Industries() {
                 >
                   {industry.description}
                 </p>
+                <ReadMore
+                  label="Learn more"
+                  className={`mt-3 text-white ${isOpen ? "" : "lg:hidden"}`}
+                />
               </div>
             </Link>
           );

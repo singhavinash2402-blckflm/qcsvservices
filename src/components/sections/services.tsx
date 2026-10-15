@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReadMore } from "@/components/ui/read-more";
 import { homeServices } from "@/config/home";
 
 const spans = [
@@ -53,6 +54,7 @@ export function Services() {
                   ))}
                 </ul>
               ) : null}
+              <ReadMore label="Explore" className="mt-5 text-white" />
             </div>
           </Link>
         ))}

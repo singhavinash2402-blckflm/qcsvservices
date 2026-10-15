@@ -5,7 +5,8 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ScrollLink } from "@/components/ui/scroll-link";
-import { serviceGroupOrder, services } from "@/config/services";
+import { ReadMore } from "@/components/ui/read-more";
+import { serviceGroupId, serviceGroupOrder, services } from "@/config/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -53,6 +54,7 @@ export default function ServicesPage() {
         {serviceGroupOrder.map((group) => (
           <section
             key={group}
+            id={serviceGroupId(group)}
             className="qcsv-container-wide py-14 md:py-20 [&:not(:last-of-type)]:border-b [&:not(:last-of-type)]:border-[var(--border)]"
           >
             <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
@@ -83,6 +85,7 @@ export default function ServicesPage() {
                       <p className="mt-2 text-sm text-[var(--foreground-muted)]">
                         {service.summary}
                       </p>
+                      <ReadMore className="mt-4 text-[var(--foreground)]" />
                     </div>
                   </Link>
                 ))}
