@@ -89,7 +89,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["sap-validation", "lims-validation", "empower-3-validation"],
-    image: "/images/services/validation-quality.jpg"
+    image: "/images/services/computer-system-validation.jpg"
   },
   {
     slug: "it-infrastructure-qualification",
@@ -126,7 +126,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["sap-validation", "lims-validation"],
-    image: "/images/services/enterprise-technology.jpg"
+    image: "/images/services/it-infrastructure-qualification.jpg"
   },
   {
     slug: "cloud-services",
@@ -152,7 +152,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["empower-3-validation"],
-    image: "/images/services/services-overview.jpg"
+    image: "/images/services/cloud-services.jpg"
   },
   {
     slug: "quality-assurance",
@@ -188,7 +188,7 @@ export const services: Service[] = [
       }
     ],
     stories: [],
-    image: "/images/services/validation-quality.jpg"
+    image: "/images/services/quality-assurance.jpg"
   },
   {
     slug: "audits-assessments",
@@ -234,7 +234,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["sap-gap-assessment"],
-    image: "/images/industries/regulated-manufacturing.jpg"
+    image: "/images/services/audits-assessments.jpg"
   },
   {
     slug: "project-documentation",
@@ -264,7 +264,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["sop-preparation"],
-    image: "/images/services/project-delivery.jpg"
+    image: "/images/services/project-documentation.jpg"
   },
   {
     slug: "sap-services",
@@ -335,7 +335,7 @@ export const services: Service[] = [
       "sap-gap-assessment",
       "sop-preparation"
     ],
-    image: "/images/services/enterprise-technology.jpg"
+    image: "/images/services/sap-services.jpg"
   },
   {
     slug: "manufacturing-execution-systems",
@@ -369,7 +369,7 @@ export const services: Service[] = [
       }
     ],
     stories: [],
-    image: "/images/industries/regulated-manufacturing.jpg"
+    image: "/images/services/manufacturing-execution-systems.jpg"
   },
   {
     slug: "serialization",
@@ -399,7 +399,7 @@ export const services: Service[] = [
       }
     ],
     stories: [],
-    image: "/images/industries/pharmaceuticals.jpg"
+    image: "/images/services/serialization.jpg"
   },
   {
     slug: "project-management",
@@ -426,7 +426,7 @@ export const services: Service[] = [
       }
     ],
     stories: ["sap-technical-upgrade", "lims-validation"],
-    image: "/images/services/project-delivery.jpg"
+    image: "/images/services/project-management.jpg"
   },
   {
     slug: "it-staffing",
@@ -454,7 +454,7 @@ export const services: Service[] = [
       ]
     },
     stories: [],
-    image: "/images/success-stories/success-stories.jpg"
+    image: "/images/services/it-staffing.jpg"
   },
   {
     slug: "website-development",
