@@ -1,5 +1,7 @@
 "use client";
 
+import { ConsultationButton } from "@/components/consultation/consultation-button";
+
 import { ScrollLink } from "@/components/ui/scroll-link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -135,13 +137,10 @@ export function Header({
           <div className="flex items-center gap-2">
             <ThemeToggle />
 
-            <ScrollLink
-              href="/#contact"
-              className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
-            >
+            <ConsultationButton className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]">
               Request a consultation
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-            </ScrollLink>
+            </ConsultationButton>
             <MobileNavigation />
           </div>
         </div>

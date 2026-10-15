@@ -1,3 +1,4 @@
+import { ConsultationButton } from "@/components/consultation/consultation-button";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,7 +6,6 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { CtaBand } from "@/components/shared/cta-band";
-import { ScrollLink } from "@/components/ui/scroll-link";
 import { ReadMore } from "@/components/ui/read-more";
 import { serviceGroupId, serviceGroupOrder, services } from "@/config/services";
 
@@ -43,12 +43,9 @@ export default function ServicesPage() {
               Validation, quality, regulated systems and delivery support, from
               the first requirement to the final report.
             </p>
-            <ScrollLink
-              href="/#contact"
-              className="mt-8 inline-flex min-h-12 items-center rounded-full bg-white px-7 text-sm font-semibold text-[#0b0f14] transition-transform hover:scale-[1.03]"
-            >
+            <ConsultationButton className="mt-8 inline-flex min-h-12 items-center rounded-full bg-white px-7 text-sm font-semibold text-[#0b0f14] transition-transform hover:scale-[1.03]">
               Request a consultation
-            </ScrollLink>
+            </ConsultationButton>
           </div>
         </section>
 

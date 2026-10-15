@@ -34,6 +34,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
             { label: service.group }
           ]}
           secondary={{ label: "All services", href: "/services" }}
+          consultationService={service.name}
         />
 
         <section className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
@@ -194,7 +195,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
           </div>
         </section>
 
-        <CtaBand />
+        <CtaBand service={service.name} />
       </main>
 
       <Footer />

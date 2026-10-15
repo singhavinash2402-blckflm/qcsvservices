@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import { ConsultationProvider } from "@/components/consultation/consultation-provider";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { isProduction, siteConfig } from "@/config/site";
 import "./globals.css";
@@ -38,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={sans.variable}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ConsultationProvider>{children}</ConsultationProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

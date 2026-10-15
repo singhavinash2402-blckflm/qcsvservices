@@ -1,7 +1,6 @@
+import { ConsultationButton } from "@/components/consultation/consultation-button";
 import Image from "next/image";
 import Link from "next/link";
-
-import { ScrollLink } from "@/components/ui/scroll-link";
 
 type PageHeroProps = Readonly<{
   image: string;
@@ -9,6 +8,7 @@ type PageHeroProps = Readonly<{
   summary: string;
   breadcrumb?: { label: string; href?: string }[];
   secondary?: { label: string; href: string };
+  consultationService?: string;
 }>;
 
 export function PageHero({
@@ -16,7 +16,8 @@ export function PageHero({
   title,
   summary,
   breadcrumb,
-  secondary
+  secondary,
+  consultationService
 }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-[#0b0f14] text-white">
@@ -54,12 +55,12 @@ export function PageHero({
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-white/85">{summary}</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ScrollLink
-            href="/#contact"
+          <ConsultationButton
+            service={consultationService}
             className="inline-flex min-h-12 items-center rounded-full bg-white px-7 text-sm font-semibold text-[#0b0f14] transition-transform hover:scale-[1.03]"
           >
             Request a consultation
-          </ScrollLink>
+          </ConsultationButton>
           {secondary ? (
             <Link
               href={secondary.href}

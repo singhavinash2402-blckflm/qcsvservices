@@ -1,5 +1,7 @@
 "use client";
 
+import { ConsultationButton } from "@/components/consultation/consultation-button";
+
 import { ScrollLink } from "@/components/ui/scroll-link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
@@ -133,14 +135,13 @@ export function MobileNavigation() {
               </ScrollLink>
             ))}
 
-            <ScrollLink
-              href="/#contact"
+            <ConsultationButton
               onClick={closeMenu}
               className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-            </ScrollLink>
+            </ConsultationButton>
           </nav>
         </div>
       ) : null}
