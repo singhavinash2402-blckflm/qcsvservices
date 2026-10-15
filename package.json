@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/singhavinash2402-blckflm/qcsvservices#readme",
   "dependencies": {
-    "lucide-react": "^1.44.0",
+    "lucide-react": "^1.55.0",
     "next": "^16.3.4",
     "next-themes": "^0.4.6",
     "react": "^19.3.0",
@@ -38,11 +38,11 @@
     "@types/node": "^22.20.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "autoprefixer": "^10.5.6",
+    "autoprefixer": "^10.6.1",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.4",
-    "postcss": "^8.5.28",
-    "prettier": "^3.9.6",
+    "postcss": "^8.5.29",
+    "prettier": "^3.9.10",
     "tailwindcss": "^3.4.17",
     "typescript": "^6.0.3"
   }
