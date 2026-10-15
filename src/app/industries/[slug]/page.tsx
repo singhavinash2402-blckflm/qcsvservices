@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { IndustryPage } from "@/components/industries/industry-page";
+import { siteConfig } from "@/config/site";
 import { getIndustry, industries } from "@/config/industries";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${industry.name} | QCSV Services`,
       description: industry.summary,
+      images: [siteConfig.ogImage],
       url: `/industries/${industry.slug}`
     }
   };

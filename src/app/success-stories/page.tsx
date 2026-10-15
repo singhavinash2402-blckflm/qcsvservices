@@ -18,7 +18,7 @@ export default function SuccessStoriesPage() {
     <div className="min-h-screen bg-[var(--background)]">
       <Header overlay />
 
-      <main>
+      <main id="main-content">
         <PageHero
           image="/images/success-stories/success-stories.jpg"
           title="Success stories."

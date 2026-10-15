@@ -5,6 +5,12 @@ export const siteConfig = {
   title: "Validation and Quality Support for Pharma and Life Sciences",
   description:
     "QCSV Services helps pharmaceutical and life sciences organisations validate computerised systems, qualify infrastructure and equipment, and prepare the documentation that goes with them.",
+  ogImage: {
+    url: "/og-default.jpg",
+    width: 1200,
+    height: 630,
+    alt: "QCSV Services: validation and quality support for pharma and life sciences"
+  },
   /** Contact details come from the old website. Confirm with the client before launch. */
   contact: {
     email: "info@qcsvservices.in",

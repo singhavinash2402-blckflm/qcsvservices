@@ -7,7 +7,7 @@ export function LegalPage({ document }: Readonly<{ document: LegalDocument }>) {
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
 
-      <main className="qcsv-container-wide py-16 md:py-24">
+      <main id="main-content" className="qcsv-container-wide py-16 md:py-24">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold tracking-[-0.035em] text-[var(--foreground)] md:text-5xl">
             {document.title}

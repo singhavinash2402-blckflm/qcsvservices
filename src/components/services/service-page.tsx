@@ -24,7 +24,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
     <div className="min-h-screen bg-[var(--background)]">
       <Header overlay />
 
-      <main>
+      <main id="main-content">
         <PageHero
           image={service.image}
           title={service.headline}

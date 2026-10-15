@@ -23,9 +23,10 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_IN",
     title: `${siteConfig.name} | ${siteConfig.title}`,
-    description: siteConfig.description
+    description: siteConfig.description,
+    images: [siteConfig.ogImage]
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: [siteConfig.ogImage.url] },
   robots: isProduction
     ? { index: true, follow: true }
     : { index: false, follow: false }
@@ -39,6 +40,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={sans.variable}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--foreground)] focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-[var(--background)]"
+        >
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: siteConfig.name,
+              legalName: siteConfig.legalName,
+              url: siteConfig.url,
+              description: siteConfig.description
+            })
+          }}
+        />
         <ThemeProvider>
           <ConsultationProvider>{children}</ConsultationProvider>
         </ThemeProvider>

@@ -18,7 +18,7 @@ export function IndustryPage({ industry }: Readonly<{ industry: Industry }>) {
     <div className="min-h-screen bg-[var(--background)]">
       <Header overlay />
 
-      <main>
+      <main id="main-content">
         <PageHero
           image={industry.image}
           title={industry.headline}

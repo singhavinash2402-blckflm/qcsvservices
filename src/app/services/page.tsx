@@ -21,7 +21,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-[var(--background)]">
       <Header overlay />
 
-      <main>
+      <main id="main-content">
         <section className="relative isolate overflow-hidden bg-[#0b0f14] text-white">
           <Image
             src="/images/services/services-overview.jpg"

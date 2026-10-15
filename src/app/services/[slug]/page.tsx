@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ServicePage } from "@/components/services/service-page";
+import { siteConfig } from "@/config/site";
 import { getService, services } from "@/config/services";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${service.name} | QCSV Services`,
       description: service.summary,
+      images: [siteConfig.ogImage],
       url: `/services/${service.slug}`
     }
   };

@@ -15,7 +15,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[var(--background)]">
       <Header overlay />
 
-      <main>
+      <main id="main-content">
         <Hero />
         <Statement />
         <Services />

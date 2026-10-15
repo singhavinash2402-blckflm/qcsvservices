@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://qcsvservices.in";
+import { isProduction, siteConfig } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
+  // Preview deployments must never be crawled.
+  if (!isProduction) {
+    return { rules: { userAgent: "*", disallow: "/" } };
+  }
+
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/"
-    },
-    sitemap: `${siteUrl}/sitemap.xml`
+    rules: { userAgent: "*", allow: "/" },
+    sitemap: `${siteConfig.url}/sitemap.xml`
   };
 }
