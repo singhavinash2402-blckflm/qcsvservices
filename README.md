@@ -1,4 +1,4 @@
-﻿# QCSV Services Website
+# QCSV Services Website
 
 ## 1. Project Overview
 
@@ -146,23 +146,23 @@ npm run typecheck; npm run lint; npm run build
 The intended release flow is:
 
 Local Development
-    |
-    v
+|
+v
 Vercel Preview
-    |
-    v
+|
+v
 Client Review
-    |
-    v
+|
+v
 Revision Cycle
-    |
-    v
+|
+v
 UAT
-    |
-    v
+|
+v
 Production
-    |
-    v
+|
+v
 qcsvservices.in
 
 The Vercel Preview environment is the preferred environment for client review before production DNS/domain configuration.
@@ -172,29 +172,29 @@ The Vercel Preview environment is the preferred environment for client review be
 Primary application structure:
 
 src/
-  app/
-  components/
-    layout/
-    sections/
-    theme/
-    ui/
-  config/
-  lib/
+app/
+components/
+layout/
+sections/
+theme/
+ui/
+config/
+lib/
 
 public/
-  images/
-  icons/
-  logos/
+images/
+icons/
+logos/
 
 docs/
-  04-content/
-  05-design/
-  source-material/
+04-content/
+05-design/
+source-material/
 
 tests/
 
 .github/
-  workflows/
+workflows/
 
 ## 8. Current Route Inventory
 

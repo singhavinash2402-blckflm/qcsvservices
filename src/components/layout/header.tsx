@@ -1,6 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { ConsultationButton } from "@/components/consultation/consultation-button";
+
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { serviceGroups } from "@/config/service-catalog";
@@ -11,12 +13,23 @@ const navigation = [
   { label: "Industries", href: "/industries" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/#contact" }
 ];
 
-export function Header() {
+export function Header({
+  overlay: overlayRequested = false
+}: Readonly<{ overlay?: boolean }>) {
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const overlay = overlayRequested && !scrolled;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -31,35 +44,39 @@ export function Header() {
   }, [servicesOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
+    <header
+      data-overlay={overlay}
+      className={`${overlayRequested ? "fixed inset-x-0" : "sticky"} top-0 z-50 border-b transition-colors duration-300 ${
+        overlay
+          ? "border-transparent bg-transparent"
+          : "border-transparent bg-[var(--background)] shadow-[0_1px_0_var(--border)]"
+      }`}
+    >
       <div className="qcsv-container-wide">
         <div className="flex min-h-16 items-center justify-between gap-6">
-          <Link
+          <ScrollLink
             href="/"
             className="shrink-0 rounded-md font-display text-xl font-bold tracking-tight text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
             aria-label="QCSV Services home"
           >
-            QCSV<span className="text-[var(--primary)]">.</span>
-          </Link>
+            QCSV Services
+          </ScrollLink>
 
           <nav
             className="hidden items-center gap-1 lg:flex"
             aria-label="Primary navigation"
           >
-            <Link
-              href="/"
-              className="rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+            <div
+              className="relative flex items-center"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
             >
-              Home
-            </Link>
-
-            <div className="relative flex items-center">
-              <Link
+              <ScrollLink
                 href="/services"
-                className="rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                className="rounded-full px-4 py-2 text-[15px] font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
               >
                 Services
-              </Link>
+              </ScrollLink>
 
               <button
                 ref={servicesTriggerRef}
@@ -79,17 +96,17 @@ export function Header() {
               {servicesOpen ? (
                 <div
                   id="desktop-services-menu"
-                  className="absolute left-0 top-full z-50 mt-2 grid max-h-[calc(100vh-5rem)] w-[min(42rem,calc(100vw-2rem))] grid-cols-2 gap-x-6 gap-y-4 overflow-y-auto rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] p-4 shadow-[var(--shadow-card)]"
+                  className="absolute left-0 top-full z-50 mt-0 grid max-h-[calc(100vh-5rem)] w-[min(42rem,calc(100vw-2rem))] grid-cols-2 gap-x-6 gap-y-4 overflow-y-auto rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] p-4 shadow-[var(--shadow-card)]"
                   role="menu"
                 >
                   {serviceGroups.map((group) => (
                     <div key={group.title}>
-                      <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+                      <div className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
                         {group.title}
                       </div>
                       <div className="mt-1.5">
                         {group.services.map((service) => (
-                          <Link
+                          <ScrollLink
                             key={service.name}
                             href={service.href}
                             onClick={() => setServicesOpen(false)}
@@ -97,7 +114,7 @@ export function Header() {
                             role="menuitem"
                           >
                             {service.name}
-                          </Link>
+                          </ScrollLink>
                         ))}
                       </div>
                     </div>
@@ -107,29 +124,23 @@ export function Header() {
             </div>
 
             {navigation.map((item) => (
-              <Link
+              <ScrollLink
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+                className="rounded-full px-4 py-2 text-[15px] font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
               >
                 {item.label}
-              </Link>
+              </ScrollLink>
             ))}
           </nav>
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
 
-            <Link
-              href="/#contact"
-              className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
-            >
-              Start a conversation
-              <ArrowRight
-                aria-hidden="true"
-                className="ml-2 h-4 w-4"
-              />
-            </Link>
+            <ConsultationButton className="hidden sm:inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]">
+              Request a consultation
+              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+            </ConsultationButton>
             <MobileNavigation />
           </div>
         </div>

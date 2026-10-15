@@ -1,4 +1,4 @@
-﻿import type { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
 interface StatProps extends HTMLAttributes<HTMLDivElement> {
   value: string;
@@ -14,10 +14,7 @@ export function Stat({
   ...props
 }: StatProps) {
   return (
-    <div
-      className={`text-center ${className}`}
-      {...props}
-    >
+    <div className={`text-center ${className}`} {...props}>
       <div className="font-display text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
         {value}
       </div>

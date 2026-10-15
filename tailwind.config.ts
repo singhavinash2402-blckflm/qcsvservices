@@ -6,32 +6,32 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-jakarta)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
       },
       maxWidth: {
         content: "1200px",
-        wide: "1400px",
+        wide: "1400px"
       },
       colors: {
         qcsv: {
-          primary: "#0EA5E9",
-          secondary: "#6366F1",
-          accent: "#10B981",
-          ink: "#070B14",
-        },
+          primary: "#0E7C86",
+          secondary: "#1F3A4D",
+          accent: "#C9801A",
+          ink: "#0B0F14"
+        }
       },
       boxShadow: {
-        card: "0 8px 30px rgba(0,0,0,.35)",
-        glow: "0 0 35px rgba(14,165,233,.25)",
+        card: "0 10px 40px rgba(11,15,20,.07)",
+        glow: "none"
       },
       borderRadius: {
-        qcsv: "20px",
-      },
-    },
+        qcsv: "28px"
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };
 
 export default config;

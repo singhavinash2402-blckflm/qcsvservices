@@ -1,4 +1,4 @@
-﻿# QCSV Services - Project Guidelines
+# QCSV Services - Project Guidelines
 
 ## 1. Project Overview
 
@@ -149,11 +149,11 @@ Do not migrate to Tailwind CSS 4 or change the build system without a deliberate
 The planned environment flow is:
 
 Local Development
-        |
-        v
+|
+v
 Vercel Preview / Client UAT
-        |
-        v
+|
+v
 Production
 qcsvservices.in
 
@@ -205,36 +205,36 @@ Current project structure:
 qcsvservices/
 |
 +-- .github/
-|   +-- workflows/
+| +-- workflows/
 |
 +-- docs/
-|   +-- 04-content/
-|   +-- 05-design/
-|       +-- source-material/
+| +-- 04-content/
+| +-- 05-design/
+| +-- source-material/
 |
 +-- public/
-|   +-- images/
-|       +-- about/
-|       +-- hero/
-|       +-- industries/
-|       +-- services/
-|       +-- success-stories/
-|   +-- icons/
-|   +-- logos/
+| +-- images/
+| +-- about/
+| +-- hero/
+| +-- industries/
+| +-- services/
+| +-- success-stories/
+| +-- icons/
+| +-- logos/
 |
 +-- src/
-|   +-- app/
-|       +-- about/
-|       +-- industries/
-|       +-- services/
-|       +-- success-stories/
-|   +-- components/
-|       +-- layout/
-|       +-- sections/
-|       +-- theme/
-|       +-- ui/
-|   +-- config/
-|   +-- lib/
+| +-- app/
+| +-- about/
+| +-- industries/
+| +-- services/
+| +-- success-stories/
+| +-- components/
+| +-- layout/
+| +-- sections/
+| +-- theme/
+| +-- ui/
+| +-- config/
+| +-- lib/
 |
 +-- tests/
 |
@@ -851,19 +851,19 @@ Use logical development batches.
 Recommended workflow:
 
 Develop
-  |
+|
 Validate
-  |
+|
 Review diff
-  |
+|
 Commit
-  |
+|
 Push development branch
-  |
+|
 Preview deployment
-  |
+|
 Client review / UAT
-  |
+|
 Production release
 
 Do not commit unrelated work together.

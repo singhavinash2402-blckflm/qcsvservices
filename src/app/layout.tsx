@@ -1,58 +1,67 @@
-﻿import type { Metadata } from "next";
-import {
-  Inter,
-  JetBrains_Mono,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
+import type { Metadata } from "next";
+import { Instrument_Sans } from "next/font/google";
+import { ConsultationProvider } from "@/components/consultation/consultation-provider";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { isProduction, siteConfig } from "@/config/site";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const sans = Instrument_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
+  display: "swap"
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://qcsvservices.in"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "QCSV Services | Technology & Digital Services",
-    template: "%s | QCSV Services",
+    default: `${siteConfig.name} | ${siteConfig.title}`,
+    template: `%s | ${siteConfig.name}`
   },
-  description:
-    "QCSV Services delivers modern technology, data, cloud, and digital solutions for businesses.",
-  alternates: {
-    canonical: "https://qcsvservices.in",
+  description: siteConfig.description,
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "en_IN",
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage]
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  twitter: { card: "summary_large_image", images: [siteConfig.ogImage.url] },
+  robots: isProduction
+    ? { index: true, follow: true }
+    : { index: false, follow: false }
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${jakarta.variable} ${mono.variable}`}
-      >
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={sans.variable}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--foreground)] focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-[var(--background)]"
+        >
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: siteConfig.name,
+              legalName: siteConfig.legalName,
+              url: siteConfig.url,
+              description: siteConfig.description
+            })
+          }}
+        />
+        <ThemeProvider>
+          <ConsultationProvider>{children}</ConsultationProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

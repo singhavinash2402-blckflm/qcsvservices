@@ -11,16 +11,13 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
-  align = "left",
+  align = "left"
 }: SectionHeadingProps) {
-  const alignment =
-    align === "center"
-      ? "mx-auto text-center"
-      : "text-left";
+  const alignment = align === "center" ? "mx-auto text-center" : "text-left";
 
   return (
     <div className={`max-w-3xl ${alignment}`}>
-      <div className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">
+      <div className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary-text)]">
         {eyebrow}
       </div>
 

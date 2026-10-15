@@ -1,130 +1,84 @@
-import {
-  ClipboardCheck,
-  FileCheck2,
-  FlaskConical,
-  HardDrive,
-  Layers3,
-} from "lucide-react";
+"use client";
+
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { useRef } from "react";
 
-import { Card } from "@/components/ui/card";
-import { Container } from "@/components/ui/container";
-import { Icon } from "@/components/ui/icon";
-import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
-
-const successStories = [
-  {
-    title: "SAP Validation",
-    location: "UK",
-    industry: "Pharmaceuticals",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "SAP Technical Upgrade",
-    location: "US",
-    industry: "Semiconductor",
-    icon: Layers3,
-  },
-  {
-    title: "LIMS Validation",
-    location: "US",
-    industry: "Pharmaceuticals",
-    icon: FlaskConical,
-  },
-  {
-    title: "Equipment Qualification",
-    location: "Israel",
-    industry: "Medical Devices",
-    icon: HardDrive,
-  },
-  {
-    title: "SAP GAP Assessment",
-    location: "Israel",
-    industry: "Pharmaceuticals",
-    icon: FileCheck2,
-  },
-  {
-    title: "SOP Preparation",
-    location: "Israel",
-    industry: "Pharmaceuticals",
-    icon: FileCheck2,
-  },
-  {
-    title: "Empower 3 Validation",
-    location: "US",
-    industry: "Pharmaceuticals",
-    icon: ClipboardCheck,
-  },
-];
+import { ReadMore } from "@/components/ui/read-more";
+import { stories, storyHref, storyMeta } from "@/config/stories";
 
 export function SuccessStories() {
+  const rail = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 1 | -1) =>
+    rail.current?.scrollBy({ left: direction * 400, behavior: "smooth" });
+
   return (
-    <Section id="success-stories" className="bg-[var(--surface)]">
-      <Container>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <SectionHeading
-              eyebrow="SUCCESS STORIES"
-              title="Experience across validation, technology and quality initiatives."
-              description="Explore selected QCSV engagements across regulated industries and technology-driven environments."
-            />
-          </div>
+    <section
+      id="success-stories"
+      className="bg-[#0b0f14] py-20 text-white md:py-28"
+    >
+      <div className="qcsv-container-wide">
+        <h2 className="text-4xl font-bold tracking-[-0.03em] md:text-5xl">
+          Selected engagements
+        </h2>
+        <p className="mt-4 max-w-2xl text-white/70">
+          Customers across industries come to us with specific business
+          challenges, and we build individual solutions for them. These
+          engagements show the work behind the headlines. Customer names are
+          withheld.
+        </p>
 
-          <Link
-            href="/success-stories"
-            className="inline-flex shrink-0 items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
-          >
-            View all success stories
-            <span aria-hidden="true" className="ml-2">
-              →
-            </span>
-          </Link>
-        </div>
-
-        <div className="relative mt-10 h-48 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] sm:h-56 lg:h-64">
-          <Image
-            src="/images/success-stories/success-stories.jpg"
-            alt="Abstract technology system visual for confirmed success stories"
-            fill
-            sizes="(min-width: 1024px) 1200px, 100vw"
-            className="object-cover object-center"
-          />
-        </div>
-
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {successStories.map((story) => (
-            <Card
-              key={`${story.title}-${story.location}`}
-              interactive
-              className="flex h-full flex-col p-6"
+        <div
+          ref={rail}
+          tabIndex={0}
+          aria-label="Success stories"
+          className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5"
+        >
+          {stories.map((story) => (
+            <Link
+              key={story.slug}
+              href={storyHref(story)}
+              className="group flex min-h-[300px] w-[min(380px,84vw)] shrink-0 snap-start flex-col rounded-3xl border border-white/10 bg-[#131a21] p-7 transition-colors hover:border-white/30"
             >
-              <Icon icon={story.icon} size="md" />
-
-              <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[var(--foreground-subtle)]">
-                <span>{story.location}</span>
-                <span aria-hidden="true">•</span>
-                <span>{story.industry}</span>
-              </div>
-
-              <h3 className="mt-3 font-display text-xl font-semibold text-[var(--foreground)]">
+              <h3 className="text-xl font-semibold tracking-tight">
                 {story.title}
               </h3>
-
-              <Link
-                href="/success-stories"
-                className="mt-6 inline-flex items-center text-sm font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
-              >
-                Read case study
-                <span aria-hidden="true" className="ml-2">
-                  →
-                </span>
-              </Link>
-            </Card>
+              <p className="mb-4 mt-2 text-sm font-semibold text-[#6fd0d8]">
+                {storyMeta(story)}
+              </p>
+              <p className="flex-1 text-sm leading-relaxed text-white/70">
+                {story.summary}
+              </p>
+              <ReadMore className="mt-5 text-white" />
+            </Link>
           ))}
         </div>
-      </Container>
-    </Section>
+
+        <div className="mt-4 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => scroll(-1)}
+            aria-label="Previous stories"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 hover:bg-white/10"
+          >
+            <ArrowLeft aria-hidden="true" className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scroll(1)}
+            aria-label="Next stories"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 hover:bg-white/10"
+          >
+            <ArrowRight aria-hidden="true" className="h-5 w-5" />
+          </button>
+          <Link
+            href="/success-stories"
+            className="ml-3 text-sm font-semibold text-white underline-offset-4 hover:underline"
+          >
+            View all success stories
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

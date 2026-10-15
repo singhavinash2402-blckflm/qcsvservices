@@ -1,50 +1,52 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --surface: #f8fafc;
+  --surface: #f2f5f6;
   --surface-elevated: #ffffff;
-  --foreground: #0f172a;
-  --foreground-muted: #475569;
-  --foreground-subtle: #64748b;
+  --foreground: #0b0f14;
+  --foreground-muted: #4c5963;
+  --foreground-subtle: #66737d;
 
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --border: #dfe4e7;
+  --border-strong: #c5cdd2;
 
-  --primary: #0ea5e9;
-  --primary-hover: #0284c7;
-  --secondary: #6366f1;
-  --accent: #10b981;
+  --primary: #0e7c86;
+  --primary-hover: #0a636b;
+  --primary-text: #0a5c64;
+  --secondary: #1f3a4d;
+  --accent: #c9801a;
 
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
   --radius-full: 9999px;
 
-  --shadow-card: 0 8px 30px rgba(15, 23, 42, 0.08);
-  --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.18);
+  --shadow-card: 0 10px 40px rgba(11, 15, 20, 0.07);
+  --shadow-glow: none;
 }
 
 .dark {
-  --background: #070b14;
-  --surface: #0d1322;
-  --surface-elevated: #131c31;
-  --foreground: #f8fafc;
-  --foreground-muted: #94a3b8;
-  --foreground-subtle: #64748b;
+  --background: #0b0f14;
+  --surface: #121a21;
+  --surface-elevated: #151e27;
+  --foreground: #f3f6f7;
+  --foreground-muted: #a3b0ba;
+  --foreground-subtle: #7d8c97;
 
-  --border: rgba(148, 163, 184, 0.14);
-  --border-strong: rgba(148, 163, 184, 0.24);
+  --border: rgba(163, 176, 186, 0.16);
+  --border-strong: rgba(163, 176, 186, 0.28);
 
-  --primary: #0ea5e9;
-  --primary-hover: #38bdf8;
-  --secondary: #6366f1;
-  --accent: #10b981;
+  --primary: #0e7c86;
+  --primary-hover: #13939f;
+  --primary-text: #6fd0d8;
+  --secondary: #1f3a4d;
+  --accent: #e9a94a;
 
-  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.25);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: none;
 }
 
 * {
@@ -53,6 +55,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -60,13 +63,13 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(14, 165, 233, 0.25);
+  background: rgba(14, 124, 134, 0.25);
 }
 
 :focus-visible {
@@ -105,34 +108,21 @@ body {
   }
 
   .qcsv-gradient-text {
-    background: linear-gradient(
-      135deg,
-      var(--primary),
-      var(--secondary)
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: var(--primary-text);
   }
 
   .qcsv-ambient-glow {
-    pointer-events: none;
-    position: absolute;
-    width: 24rem;
-    height: 24rem;
-    border-radius: 9999px;
-    background: rgba(14, 165, 233, 0.12);
-    filter: blur(90px);
+    display: none;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-jakarta), system-ui, sans-serif;
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
 
   .font-mono {
-    font-family: var(--font-mono), monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 }
 
@@ -171,5 +161,66 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@keyframes qcsv-kenburns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.14) translate(-1.2%, -1%);
+  }
+}
+
+.qcsv-kenburns {
+  animation: qcsv-kenburns 9s ease-out forwards;
+}
+
+/* Header sits transparent over the home hero, then turns solid on scroll. */
+header[data-overlay="true"] {
+  --foreground: #ffffff;
+  --foreground-muted: rgba(255, 255, 255, 0.9);
+  --surface: rgba(255, 255, 255, 0.16);
+  --border: rgba(255, 255, 255, 0.4);
+}
+
+header[data-overlay="true"] #mobile-navigation,
+header[data-overlay="true"] #desktop-services-menu {
+  --background: #ffffff;
+  --foreground: #0b0f14;
+  --foreground-muted: #4c5963;
+  --surface: #f2f5f6;
+  --border: #dfe4e7;
+}
+
+.dark header[data-overlay="true"] #mobile-navigation,
+.dark header[data-overlay="true"] #desktop-services-menu {
+  --background: #0b0f14;
+  --foreground: #f3f6f7;
+  --foreground-muted: #a3b0ba;
+  --surface: #121a21;
+  --border: rgba(163, 176, 186, 0.16);
+}
+
+.qcsv-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.qcsv-faq summary::after {
+  content: "+";
+  color: var(--primary-text);
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.qcsv-faq[open] summary::after {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qcsv-kenburns {
+    animation: none;
   }
 }

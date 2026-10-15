@@ -1,6 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { ConsultationButton } from "@/components/consultation/consultation-button";
+
+import { ScrollLink } from "@/components/ui/scroll-link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { serviceGroups } from "@/config/service-catalog";
@@ -9,7 +11,7 @@ const navigation = [
   { label: "Industries", href: "/industries" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export function MobileNavigation() {
@@ -46,15 +48,9 @@ export function MobileNavigation() {
         aria-controls="mobile-navigation"
       >
         {open ? (
-          <X
-            aria-hidden="true"
-            className="h-5 w-5"
-          />
+          <X aria-hidden="true" className="h-5 w-5" />
         ) : (
-          <Menu
-            aria-hidden="true"
-            className="h-5 w-5"
-          />
+          <Menu aria-hidden="true" className="h-5 w-5" />
         )}
       </button>
 
@@ -67,22 +63,22 @@ export function MobileNavigation() {
             className="qcsv-container flex flex-col gap-1"
             aria-label="Mobile navigation"
           >
-            <Link
+            <ScrollLink
               href="/"
               onClick={closeMenu}
               className="rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Home
-            </Link>
+            </ScrollLink>
 
             <div className="flex items-center">
-              <Link
+              <ScrollLink
                 href="/services"
                 onClick={closeMenu}
                 className="flex min-h-11 flex-1 items-center rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
               >
                 Services
-              </Link>
+              </ScrollLink>
 
               <button
                 type="button"
@@ -99,15 +95,19 @@ export function MobileNavigation() {
               </button>
 
               {servicesOpen ? (
-                <div id="mobile-services-menu" className="pb-2 pl-4" role="menu">
+                <div
+                  id="mobile-services-menu"
+                  className="pb-2 pl-4"
+                  role="menu"
+                >
                   {serviceGroups.map((group) => (
                     <div key={group.title} className="pt-3">
-                      <div className="px-4 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+                      <div className="px-4 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
                         {group.title}
                       </div>
                       <div className="mt-1">
                         {group.services.map((service) => (
-                          <Link
+                          <ScrollLink
                             key={service.name}
                             href={service.href}
                             onClick={closeMenu}
@@ -115,7 +115,7 @@ export function MobileNavigation() {
                             role="menuitem"
                           >
                             {service.name}
-                          </Link>
+                          </ScrollLink>
                         ))}
                       </div>
                     </div>
@@ -125,27 +125,23 @@ export function MobileNavigation() {
             </div>
 
             {navigation.map((item) => (
-              <Link
+              <ScrollLink
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
                 className="rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
               >
                 {item.label}
-              </Link>
+              </ScrollLink>
             ))}
 
-            <Link
-              href="/#contact"
+            <ConsultationButton
               onClick={closeMenu}
               className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-[var(--radius-md)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
               Start a conversation
-              <ArrowRight
-                aria-hidden="true"
-                className="ml-2 h-4 w-4"
-              />
-            </Link>
+              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+            </ConsultationButton>
           </nav>
         </div>
       ) : null}
