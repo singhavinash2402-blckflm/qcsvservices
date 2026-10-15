@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { CtaBand } from "@/components/shared/cta-band";
 import { ScrollLink } from "@/components/ui/scroll-link";
 import { ReadMore } from "@/components/ui/read-more";
 import { serviceGroupId, serviceGroupOrder, services } from "@/config/services";
@@ -92,6 +93,8 @@ export default function ServicesPage() {
             </div>
           </section>
         ))}
+
+        <CtaBand />
       </main>
 
       <Footer />
