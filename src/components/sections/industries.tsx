@@ -14,6 +14,11 @@ export function Industries() {
       <h2 className="text-4xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-5xl">
         Industries we work in
       </h2>
+      <p className="mt-4 max-w-2xl text-lg text-[var(--foreground-muted)]">
+        We work where regulation shapes how technology is used: pharmaceutical
+        companies, medical device makers, life sciences organisations, regulated
+        manufacturers and technology manufacturers.
+      </p>
 
       <div className="mt-10 flex flex-col gap-3 lg:h-[600px] lg:flex-row">
         {homeIndustries.map((industry, index) => {

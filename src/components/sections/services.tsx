@@ -16,6 +16,10 @@ export function Services() {
       <h2 className="text-4xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-5xl">
         What we do
       </h2>
+      <p className="mt-4 max-w-2xl text-lg text-[var(--foreground-muted)]">
+        Bring in QCSV for a single service or for the whole project lifecycle,
+        from the first requirement to the final report.
+      </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         {homeServices.map((service, index) => (

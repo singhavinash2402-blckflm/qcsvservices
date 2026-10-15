@@ -83,5 +83,13 @@ export const homeFaqs = [
   {
     q: "Which guidance do you work to?",
     a: "Validation is delivered as per GAMP 5 guidelines, and our teams train project staff on 21 CFR Part 11 and EU Annex 11."
+  },
+  {
+    q: "Do you only work on SAP projects?",
+    a: "No. SAP is one of several areas. We also work on laboratory systems such as LIMS and Empower, equipment qualification, serialization and project documentation."
+  },
+  {
+    q: "What does a validation project usually deliver?",
+    a: "It depends on the scope. Typically it includes a plan, a test strategy, test scripts for installation, operation and performance (IQ, OQ and PQ), reviewed test evidence, and a validation summary report, finishing with a system release."
   }
 ] as const;

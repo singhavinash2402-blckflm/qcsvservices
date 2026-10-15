@@ -32,12 +32,12 @@ export function Contact() {
             <Badge variant="primary">CONTACT QCSV</Badge>
 
             <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl">
-              Let&apos;s discuss your requirements.
+              Tell us what your project needs.
             </h2>
 
             <p className="mt-5 text-base leading-7 text-[var(--foreground-muted)] sm:text-lg">
-              Tell us about your project, technology environment or service
-              requirements. Our team can discuss the appropriate next steps.
+              Share the system, site or process you are working on and we will
+              suggest a way to support it.
             </p>
 
             <div className="mt-8 space-y-5">

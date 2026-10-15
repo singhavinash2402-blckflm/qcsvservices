@@ -1,68 +1,37 @@
-import { ClipboardCheck, FileCheck2, Layers3, ShieldCheck } from "lucide-react";
-
-import { Card } from "@/components/ui/card";
-import { Container } from "@/components/ui/container";
-import { Icon } from "@/components/ui/icon";
-import { Section } from "@/components/ui/section";
-import { SectionHeading } from "@/components/ui/section-heading";
-
-const strengths = [
+const reasons = [
   {
-    title: "Validation Expertise",
-    description:
-      "Specialized support for computer system validation, qualification and regulated technology environments.",
-    icon: ClipboardCheck
+    title: "One agenda: yours.",
+    text: "We build long-lasting customer relationships and focus on your goals."
   },
   {
-    title: "Regulated Industry Focus",
-    description:
-      "Experience supporting technology and quality requirements across regulated and technology-driven industries.",
-    icon: ShieldCheck
+    title: "Quality-assured delivery.",
+    text: "Our aim is to deliver the highest standard of quality-assured services through the expertise and commitment of our team."
   },
   {
-    title: "Technology Capability",
-    description:
-      "Expertise across enterprise technology, SAP, manufacturing systems, cloud and digital solutions.",
-    icon: Layers3
-  },
-  {
-    title: "Documentation & Quality",
-    description:
-      "Structured project documentation and quality-focused execution supporting reliable delivery.",
-    icon: FileCheck2
+    title: "Solutions shaped to the project.",
+    text: "We aim to deliver result-oriented, cost-effective and project-specific solutions, whatever the nature, complexity or size of the project."
   }
 ];
 
-export function WhyQCSV() {
+export function WhyQcsv() {
   return (
-    <Section id="why-qcsv">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="max-w-xl">
-            <SectionHeading
-              eyebrow="WHY QCSV"
-              title="A quality-focused technology partner for regulated environments."
-              description="QCSV brings together validation, quality, technology and project delivery capabilities to support organizations through complex technology initiatives."
-            />
+    <section id="why-qcsv" className="qcsv-container-wide py-20 md:py-28">
+      <h2 className="text-4xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-5xl">
+        Why QCSV
+      </h2>
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {reasons.map((reason) => (
+          <div
+            key={reason.title}
+            className="rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-8"
+          >
+            <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
+              {reason.title}
+            </h3>
+            <p className="mt-3 text-[var(--foreground-muted)]">{reason.text}</p>
           </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {strengths.map((strength) => (
-              <Card key={strength.title} className="p-6">
-                <Icon icon={strength.icon} size="md" />
-
-                <h3 className="mt-5 font-display text-lg font-semibold text-[var(--foreground)]">
-                  {strength.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-[var(--foreground-muted)]">
-                  {strength.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </Section>
+        ))}
+      </div>
+    </section>
   );
 }

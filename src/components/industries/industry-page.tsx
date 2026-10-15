@@ -35,6 +35,20 @@ export function IndustryPage({ industry }: Readonly<{ industry: Industry }>) {
             {industry.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <div className="border-t border-[var(--border)] pt-6">
+              <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">
+                Where we help
+              </h2>
+              <p className="mt-3 text-base leading-7">{industry.whereWeHelp}</p>
+            </div>
+            {industry.challenge ? (
+              <div className="rounded-3xl bg-[var(--surface)] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary-text)]">
+                  A common challenge
+                </p>
+                <p className="mt-2 text-base leading-7">{industry.challenge}</p>
+              </div>
+            ) : null}
           </div>
 
           <div>

@@ -4,6 +4,8 @@ export type Industry = {
   summary: string;
   headline: string;
   intro: string[];
+  whereWeHelp: string;
+  challenge?: string;
   /** Slugs of services most relevant to this industry. */
   services: string[];
   /** Slugs of success stories (see stories config) that relate to it. */
@@ -28,6 +30,10 @@ export const industries: Industry[] = [
       "The pharmaceutical industry is highly regulated and going through a period of transformational change. Technologies such as robotic process automation, predictive analytics, digital twins and modern manufacturing execution systems make it possible to do more with less.",
       "QCSV Services supports pharmaceutical manufacturers as they upgrade and improve their production lines and processes."
     ],
+    whereWeHelp:
+      "Validation of computerised and laboratory systems, SAP and manufacturing systems, serialization, and the documentation that goes with them. QCSV has delivered SAP validation, LIMS validation, gap assessments, SOP preparation and Empower 3 validation for pharmaceutical customers.",
+    challenge:
+      "Production lines and systems have to be upgraded without breaking the validated state that regulators expect.",
     services: [
       "computer-system-validation",
       "manufacturing-execution-systems",
@@ -54,6 +60,10 @@ export const industries: Industry[] = [
       "Advanced materials, technologies, diagnostic methods and treatments make medical devices one of the most innovative industries in the world. It must also meet the strict requirements of regulators while delivering products that transform patient care.",
       "QCSV Services supports medical device manufacturers in making sure their production lines meet their business objectives and their customers' requirements."
     ],
+    whereWeHelp:
+      "Equipment qualification and the validation documents around it. For an Israeli medical device manufacturer, QCSV prepared equipment process flows and validation deliverables from the validation master plan through the summary report, and wrote FAT, SAT, OQ and PQ test scripts.",
+    challenge:
+      "Production capacity has to grow while products stay consistent, which means qualifying new equipment quickly and thoroughly.",
     services: [
       "computer-system-validation",
       "quality-assurance",
@@ -73,6 +83,8 @@ export const industries: Industry[] = [
       "QCSV Services is a quality service and solution partner for life sciences organisations.",
       "Our work spans validation, quality, regulated systems and project delivery, across the pharmaceutical and medical device customers we support."
     ],
+    whereWeHelp:
+      "Validation, quality assurance, audits and project management across pharmaceutical and medical device customers.",
     services: [
       "computer-system-validation",
       "quality-assurance",
@@ -92,6 +104,8 @@ export const industries: Industry[] = [
       "Manufacturing in a regulated setting depends on production systems that are qualified, documented and kept under control.",
       "QCSV Services supports manufacturers with validation, manufacturing execution systems, serialization and the project delivery around them."
     ],
+    whereWeHelp:
+      "Manufacturing execution systems, serialization, infrastructure qualification and project delivery for regulated plants.",
     services: [
       "manufacturing-execution-systems",
       "serialization",
@@ -111,6 +125,10 @@ export const industries: Industry[] = [
       "Manufacturers in the technology industry operate in a fast-paced, innovative and highly competitive environment where technological advances occur daily. To keep up and stay profitable, they must update and improve their processes and systems.",
       "QCSV Services has supported a US semiconductor customer through a SAP technical upgrade."
     ],
+    whereWeHelp:
+      "SAP technical upgrades, project management and testing. QCSV led a technical upgrade of a US semiconductor customer's SAP S/4 HANA landscape, covering end-to-end project management, test planning, manual and automated testing, and a cutover plan.",
+    challenge:
+      "Technology manufacturers have to keep updating their systems to stay competitive without disrupting production.",
     services: [
       "sap-services",
       "project-management",
