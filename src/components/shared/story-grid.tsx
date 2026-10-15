@@ -1,14 +1,15 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-import { homeStories } from "@/config/home";
+import { ReadMore } from "@/components/ui/read-more";
+import { stories, storyHref, storyMeta } from "@/config/stories";
 
 export function StoryGrid({
-  titles,
+  slugs,
   heading
-}: Readonly<{ titles: readonly string[]; heading: string }>) {
-  const stories = homeStories.filter((story) => titles.includes(story.title));
-  if (stories.length === 0) return null;
+}: Readonly<{ slugs: readonly string[]; heading: string }>) {
+  const items = stories.filter((story) => slugs.includes(story.slug));
+  if (items.length === 0) return null;
 
   return (
     <section className="bg-[var(--surface)] py-16 md:py-24">
@@ -17,21 +18,23 @@ export function StoryGrid({
           {heading}
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {stories.map((story) => (
-            <article
-              key={story.title}
-              className="rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-6"
+          {items.map((story) => (
+            <Link
+              key={story.slug}
+              href={storyHref(story)}
+              className="group flex flex-col rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-6 transition-shadow hover:shadow-[var(--shadow-card)]"
             >
               <h3 className="text-lg font-semibold text-[var(--foreground)]">
                 {story.title}
               </h3>
               <p className="mb-3 mt-1 text-sm font-semibold text-[var(--primary-text)]">
-                {story.meta}
+                {storyMeta(story)}
               </p>
-              <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">
+              <p className="flex-1 text-sm leading-relaxed text-[var(--foreground-muted)]">
                 {story.summary}
               </p>
-            </article>
+              <ReadMore className="mt-5 text-[var(--foreground)]" />
+            </Link>
           ))}
         </div>
         <Link

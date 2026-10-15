@@ -69,7 +69,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
         </section>
 
         <StoryGrid
-          titles={service.stories}
+          slugs={service.stories}
           heading="Where we have applied this"
         />
 

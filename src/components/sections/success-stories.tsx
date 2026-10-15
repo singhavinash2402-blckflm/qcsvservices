@@ -3,7 +3,9 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
-import { homeStories } from "@/config/home";
+
+import { ReadMore } from "@/components/ui/read-more";
+import { stories, storyHref, storyMeta } from "@/config/stories";
 
 export function SuccessStories() {
   const rail = useRef<HTMLDivElement>(null);
@@ -19,8 +21,11 @@ export function SuccessStories() {
         <h2 className="text-4xl font-bold tracking-[-0.03em] md:text-5xl">
           Selected engagements
         </h2>
-        <p className="mt-4 max-w-xl text-white/70">
-          Customer names are withheld. Each card summarises what QCSV delivered.
+        <p className="mt-4 max-w-2xl text-white/70">
+          Customers across industries come to us with specific business
+          challenges, and we build individual solutions for them. These
+          engagements show the work behind the headlines. Customer names are
+          withheld.
         </p>
 
         <div
@@ -29,21 +34,23 @@ export function SuccessStories() {
           aria-label="Success stories"
           className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-5"
         >
-          {homeStories.map((story) => (
-            <article
-              key={story.title}
-              className="min-h-[290px] w-[min(380px,84vw)] shrink-0 snap-start rounded-3xl border border-white/10 bg-[#131a21] p-7"
+          {stories.map((story) => (
+            <Link
+              key={story.slug}
+              href={storyHref(story)}
+              className="group flex min-h-[300px] w-[min(380px,84vw)] shrink-0 snap-start flex-col rounded-3xl border border-white/10 bg-[#131a21] p-7 transition-colors hover:border-white/30"
             >
               <h3 className="text-xl font-semibold tracking-tight">
                 {story.title}
               </h3>
               <p className="mb-4 mt-2 text-sm font-semibold text-[#6fd0d8]">
-                {story.meta}
+                {storyMeta(story)}
               </p>
-              <p className="text-sm leading-relaxed text-white/70">
+              <p className="flex-1 text-sm leading-relaxed text-white/70">
                 {story.summary}
               </p>
-            </article>
+              <ReadMore className="mt-5 text-white" />
+            </Link>
           ))}
         </div>
 

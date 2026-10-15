@@ -67,51 +67,6 @@ export const homeIndustries = [
   }
 ] as const;
 
-export const homeStories = [
-  {
-    title: "SAP validation",
-    meta: "UK, pharmaceuticals",
-    summary:
-      "Prospective validation of a move from Dynamics Navision to SAP S/4 HANA 1709, per GAMP 5, with infrastructure qualification and data migration verification."
-  },
-  {
-    title: "SAP technical upgrade",
-    meta: "US, semiconductor",
-    summary:
-      "Project management and testing for an upgrade from S/4 HANA 1610 to 2020, including automated integration tests and a cutover plan."
-  },
-  {
-    title: "LIMS validation",
-    meta: "US, pharmaceuticals",
-    summary:
-      "Project management and prospective validation of a new laboratory information system, with infrastructure qualification and data migration verification."
-  },
-  {
-    title: "Equipment qualification",
-    meta: "Israel, medical devices",
-    summary:
-      "Validation deliverables and FAT, SAT, OQ and PQ scripts to qualify equipment for a second, on-site source of supply."
-  },
-  {
-    title: "SAP gap assessment",
-    meta: "Israel, pharmaceuticals",
-    summary:
-      "A gap assessment of an S/4 HANA system against current processes and SOPs, ending in a report with recommendations."
-  },
-  {
-    title: "SOP preparation",
-    meta: "Israel, pharmaceuticals",
-    summary:
-      "SOPs, work instructions and end-user manuals for the SAP modules MM, PP, SD, QM, PM, FICO and WM."
-  },
-  {
-    title: "Empower 3 validation",
-    meta: "US, pharmaceuticals",
-    summary:
-      "End-to-end validation as the customer moved from cloud to physical infrastructure and upgraded Empower, with a data migration protocol."
-  }
-] as const;
-
 export const homeFaqs = [
   {
     q: "What is computer system validation?",

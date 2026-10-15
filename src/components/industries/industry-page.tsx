@@ -61,7 +61,7 @@ export function IndustryPage({ industry }: Readonly<{ industry: Industry }>) {
         </section>
 
         <StoryGrid
-          titles={industry.stories}
+          slugs={industry.stories}
           heading="Selected engagements in this industry"
         />
 

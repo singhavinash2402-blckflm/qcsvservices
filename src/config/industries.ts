@@ -6,7 +6,7 @@ export type Industry = {
   intro: string[];
   /** Slugs of services most relevant to this industry. */
   services: string[];
-  /** Titles of success stories (see home config) that relate to it. */
+  /** Slugs of success stories (see stories config) that relate to it. */
   stories: string[];
   image: string;
 };
@@ -36,11 +36,11 @@ export const industries: Industry[] = [
       "it-infrastructure-qualification"
     ],
     stories: [
-      "SAP validation",
-      "LIMS validation",
-      "SAP gap assessment",
-      "SOP preparation",
-      "Empower 3 validation"
+      "sap-validation",
+      "lims-validation",
+      "sap-gap-assessment",
+      "sop-preparation",
+      "empower-3-validation"
     ],
     image: "/images/industries/pharmaceuticals.jpg"
   },
@@ -60,7 +60,7 @@ export const industries: Industry[] = [
       "project-documentation",
       "audits-assessments"
     ],
-    stories: ["Equipment qualification"],
+    stories: ["equipment-qualification"],
     image: "/images/industries/medical-devices.jpg"
   },
   {
@@ -79,7 +79,7 @@ export const industries: Industry[] = [
       "audits-assessments",
       "project-management"
     ],
-    stories: ["LIMS validation", "Empower 3 validation", "SOP preparation"],
+    stories: ["lims-validation", "empower-3-validation", "sop-preparation"],
     image: "/images/industries/life-sciences.jpg"
   },
   {
@@ -98,7 +98,7 @@ export const industries: Industry[] = [
       "it-infrastructure-qualification",
       "project-management"
     ],
-    stories: ["Equipment qualification"],
+    stories: ["equipment-qualification"],
     image: "/images/industries/regulated-manufacturing.jpg"
   },
   {
@@ -117,7 +117,7 @@ export const industries: Industry[] = [
       "cloud-services",
       "it-staffing"
     ],
-    stories: ["SAP technical upgrade"],
+    stories: ["sap-technical-upgrade"],
     image: "/images/industries/semiconductor.jpg"
   }
 ];

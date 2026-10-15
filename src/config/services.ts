@@ -18,7 +18,7 @@ export type Service = {
   intro: string[];
   coverTitle: string;
   covers: { title: string; detail?: string }[];
-  /** Titles of success stories (see home config) that relate to this service. */
+  /** Slugs of success stories (see stories config) that relate to this service. */
   stories: string[];
   image: string;
 };
@@ -55,7 +55,7 @@ export const services: Service[] = [
         detail: "Initial concept, project delivery and ongoing support."
       }
     ],
-    stories: ["SAP validation", "LIMS validation", "Empower 3 validation"],
+    stories: ["sap-validation", "lims-validation", "empower-3-validation"],
     image: "/images/services/validation-quality.jpg"
   },
   {
@@ -80,7 +80,7 @@ export const services: Service[] = [
           "Underlying infrastructure qualified before applications run on it."
       }
     ],
-    stories: ["SAP validation", "LIMS validation"],
+    stories: ["sap-validation", "lims-validation"],
     image: "/images/services/enterprise-technology.jpg"
   },
   {
@@ -99,7 +99,7 @@ export const services: Service[] = [
       { title: "Cloud infrastructure qualification" },
       { title: "Cloud computing solutions" }
     ],
-    stories: ["Empower 3 validation"],
+    stories: ["empower-3-validation"],
     image: "/images/services/services-overview.jpg"
   },
   {
@@ -147,7 +147,7 @@ export const services: Service[] = [
       { title: "GMP audits" },
       { title: "QMS audits" }
     ],
-    stories: ["SAP gap assessment"],
+    stories: ["sap-gap-assessment"],
     image: "/images/industries/regulated-manufacturing.jpg"
   },
   {
@@ -169,7 +169,7 @@ export const services: Service[] = [
         detail: "And more, depending on the project."
       }
     ],
-    stories: ["SOP preparation"],
+    stories: ["sop-preparation"],
     image: "/images/services/project-delivery.jpg"
   },
   {
@@ -201,10 +201,10 @@ export const services: Service[] = [
       { title: "Technical upgrades and data migration" }
     ],
     stories: [
-      "SAP validation",
-      "SAP technical upgrade",
-      "SAP gap assessment",
-      "SOP preparation"
+      "sap-validation",
+      "sap-technical-upgrade",
+      "sap-gap-assessment",
+      "sop-preparation"
     ],
     image: "/images/services/enterprise-technology.jpg"
   },
@@ -266,7 +266,7 @@ export const services: Service[] = [
       { title: "Grounding in manufacturing best practice" },
       { title: "Help developing process engineering solutions" }
     ],
-    stories: ["SAP technical upgrade", "LIMS validation"],
+    stories: ["sap-technical-upgrade", "lims-validation"],
     image: "/images/services/project-delivery.jpg"
   },
   {
