@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 
-import { isProduction, siteConfig } from "@/config/site";
+import { allowIndexing, siteConfig } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
-  // Preview deployments must never be crawled.
-  if (!isProduction) {
+  // Previews, and production until launch sign-off, must not be crawled.
+  if (!allowIndexing) {
     return { rules: { userAgent: "*", disallow: "/" } };
   }
 

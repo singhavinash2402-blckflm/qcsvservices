@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "QCSV Services",
   legalName: "QCSV Services Private Limited",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qcsvservices.in",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.qcsvservices.in",
   title: "Validation and Quality Support for Pharma and Life Sciences",
   description:
     "QCSV Services helps pharmaceutical and life sciences organisations validate computerised systems, qualify infrastructure and equipment, and prepare the documentation that goes with them.",
@@ -29,3 +29,10 @@ export const siteConfig = {
 export const isProduction = process.env.VERCEL_ENV
   ? process.env.VERCEL_ENV === "production"
   : process.env.NODE_ENV === "production";
+
+/**
+ * Search engines may index the site only on the production deployment AND when
+ * NEXT_PUBLIC_ALLOW_INDEXING is "true". Set it at launch, after client sign-off.
+ */
+export const allowIndexing =
+  isProduction && process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
