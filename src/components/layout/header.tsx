@@ -1,5 +1,6 @@
 "use client";
 
+import { Logo } from "@/components/layout/logo";
 import { ConsultationButton } from "@/components/consultation/consultation-button";
 
 import { ScrollLink } from "@/components/ui/scroll-link";
@@ -56,10 +57,10 @@ export function Header({
         <div className="flex min-h-16 items-center justify-between gap-6">
           <ScrollLink
             href="/"
-            className="shrink-0 rounded-md font-display text-xl font-bold tracking-tight text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
+            className="flex shrink-0 items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
             aria-label="QCSV Services home"
           >
-            QCSV Services
+            <Logo variant={overlay ? "on-dark" : "auto"} height={40} priority />
           </ScrollLink>
 
           <nav
