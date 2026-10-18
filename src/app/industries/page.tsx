@@ -30,11 +30,13 @@ export default function IndustriesPage() {
 
         <section className="qcsv-container-wide py-16 md:py-24">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry) => (
+            {industries.map((industry, index) => (
               <Link
                 key={industry.slug}
+                data-reveal
+                data-reveal-delay={(index % 3) * 80}
                 href={`/industries/${industry.slug}`}
-                className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-shadow hover:shadow-[var(--shadow-card)]"
+                className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image

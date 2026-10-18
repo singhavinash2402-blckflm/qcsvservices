@@ -61,11 +61,13 @@ export default function ServicesPage() {
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {services
                 .filter((service) => service.group === group)
-                .map((service) => (
+                .map((service, index) => (
                   <Link
                     key={service.slug}
+                    data-reveal
+                    data-reveal-delay={(index % 3) * 80}
                     href={`/services/${service.slug}`}
-                    className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-shadow hover:shadow-[var(--shadow-card)]"
+                    className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
                   >
                     <div className="relative aspect-[16/9] overflow-hidden">
                       <Image

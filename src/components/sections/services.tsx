@@ -26,6 +26,8 @@ export function Services() {
           <Link
             key={service.title}
             href={service.href}
+            data-reveal
+            data-reveal-delay={index * 80}
             className={`group relative isolate flex min-h-[340px] items-end overflow-hidden rounded-[var(--radius-lg)] text-white lg:min-h-[400px] ${spans[index]}`}
           >
             <Image

@@ -44,6 +44,7 @@ export default function SuccessStoriesPage() {
           <div className="mt-12 divide-y divide-[var(--border)]">
             {stories.map((story) => (
               <article
+                data-reveal
                 key={story.slug}
                 id={story.slug}
                 className="grid gap-8 py-12 first:pt-0 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] lg:gap-16"

@@ -37,7 +37,10 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
           consultationService={service.name}
         />
 
-        <section className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
+        <section
+          data-reveal
+          className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]"
+        >
           <div className="space-y-5 text-lg leading-8 text-[var(--foreground-muted)]">
             {service.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -87,7 +90,7 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
               <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
                 {Framework.title}
               </h2>
-              <div className="mt-10">
+              <div data-reveal className="mt-10">
                 <Framework.Component />
               </div>
             </div>
@@ -95,7 +98,10 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
         ) : null}
 
         {service.process || service.deliverables ? (
-          <section className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-2">
+          <section
+            data-reveal
+            className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-2"
+          >
             {service.process ? (
               <div>
                 <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
@@ -174,9 +180,11 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
             Related services
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {related.map((item) => (
+            {related.map((item, index) => (
               <Link
                 key={item.slug}
+                data-reveal
+                data-reveal-delay={index * 80}
                 href={`/services/${item.slug}`}
                 className="group rounded-3xl border border-[var(--border)] p-6 transition-colors hover:bg-[var(--surface)]"
               >

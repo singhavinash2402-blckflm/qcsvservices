@@ -57,6 +57,7 @@ export default function AboutPage() {
         </nav>
 
         <section
+          data-reveal
           id="overview"
           className="qcsv-container-wide grid gap-10 py-16 md:py-24 lg:grid-cols-[0.8fr_1.4fr] lg:gap-16"
         >
@@ -71,6 +72,7 @@ export default function AboutPage() {
         </section>
 
         <section
+          data-reveal
           id="mission-vision"
           className="bg-[var(--surface)] py-16 md:py-24"
         >
@@ -94,7 +96,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="qcsv-container-wide py-16 md:py-24">
+        <section data-reveal className="qcsv-container-wide py-16 md:py-24">
           <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
             Making the difference
           </h2>
@@ -115,7 +117,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section id="approach" className="bg-[var(--surface)] py-16 md:py-24">
+        <section
+          data-reveal
+          id="approach"
+          className="bg-[var(--surface)] py-16 md:py-24"
+        >
           <div className="qcsv-container-wide grid gap-10 lg:grid-cols-[0.8fr_1.4fr] lg:gap-16">
             <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
               Our approach
@@ -126,7 +132,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section id="why-qcsv" className="qcsv-container-wide py-16 md:py-24">
+        <section
+          data-reveal
+          id="why-qcsv"
+          className="qcsv-container-wide py-16 md:py-24"
+        >
           <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
             Why QCSV
           </h2>

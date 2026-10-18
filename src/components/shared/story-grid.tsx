@@ -18,11 +18,13 @@ export function StoryGrid({
           {heading}
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((story) => (
+          {items.map((story, index) => (
             <Link
               key={story.slug}
+              data-reveal
+              data-reveal-delay={(index % 3) * 80}
               href={storyHref(story)}
-              className="group flex flex-col rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-6 transition-shadow hover:shadow-[var(--shadow-card)]"
+              className="group flex flex-col rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-6 transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
             >
               <h3 className="text-lg font-semibold text-[var(--foreground)]">
                 {story.title}

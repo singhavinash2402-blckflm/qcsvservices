@@ -27,6 +27,8 @@ export function HowWeWork() {
         <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <li
+              data-reveal
+              data-reveal-delay={index * 100}
               key={step.title}
               className="border-t-2 border-[var(--primary)] pt-5"
             >

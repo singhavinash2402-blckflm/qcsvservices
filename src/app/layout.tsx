@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { ConsultationProvider } from "@/components/consultation/consultation-provider";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { allowIndexing, siteConfig } from "@/config/site";
@@ -62,6 +63,7 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <ConsultationProvider>{children}</ConsultationProvider>
+          <RevealOnScroll />
         </ThemeProvider>
       </body>
     </html>
