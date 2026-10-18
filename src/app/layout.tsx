@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import { ConsultationProvider } from "@/components/consultation/consultation-provider";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { isProduction, siteConfig } from "@/config/site";
+import { allowIndexing, siteConfig } from "@/config/site";
 import "./globals.css";
 
 const sans = Instrument_Sans({
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage]
   },
   twitter: { card: "summary_large_image", images: [siteConfig.ogImage.url] },
-  robots: isProduction
+  robots: allowIndexing
     ? { index: true, follow: true }
     : { index: false, follow: false }
 };
@@ -55,7 +55,8 @@ export default function RootLayout({
               name: siteConfig.name,
               legalName: siteConfig.legalName,
               url: siteConfig.url,
-              description: siteConfig.description
+              description: siteConfig.description,
+              logo: `${siteConfig.url}/icons/app-icon-512.png`
             })
           }}
         />
