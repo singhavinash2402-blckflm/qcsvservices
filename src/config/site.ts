@@ -5,6 +5,16 @@ export const siteConfig = {
   title: "Validation and Quality Support for Pharma and Life Sciences",
   description:
     "QCSV Services helps pharmaceutical and life sciences organisations validate computerised systems, qualify infrastructure and equipment, and prepare the documentation that goes with them.",
+  /**
+   * Optional notice shown above the menu (news, webinar, regulatory update).
+   * Leave as null to hide it. Example:
+   * { text: "New: SAP S/4 HANA validation support.", href: "/services/sap-services", linkLabel: "Read more" }
+   */
+  announcement: null as {
+    text: string;
+    href?: string;
+    linkLabel?: string;
+  } | null,
   ogImage: {
     url: "/og-default.jpg",
     width: 1200,
