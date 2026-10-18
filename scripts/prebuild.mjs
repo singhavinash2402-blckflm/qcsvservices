@@ -38,3 +38,14 @@ if (missing.size > 0) {
     console.warn(`  ${path}  (used in ${file})`);
   console.warn("");
 }
+
+// Production builds should have the enquiry form configured.
+if (process.env.VERCEL_ENV === "production") {
+  const required = ["RESEND_API_KEY", "CONTACT_TO_EMAIL", "CONTACT_FROM_EMAIL"];
+  const absent = required.filter((name) => !process.env[name]);
+  if (absent.length > 0) {
+    console.warn(
+      `\nWarning: enquiry form settings missing in production: ${absent.join(", ")}\n`
+    );
+  }
+}
