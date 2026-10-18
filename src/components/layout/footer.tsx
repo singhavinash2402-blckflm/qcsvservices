@@ -36,7 +36,7 @@ export function Footer() {
               aria-label="QCSV Services home"
               className="inline-flex"
             >
-              <Logo height={44} />
+              <Logo height={56} />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-[var(--foreground-muted)]">
               Validation and quality support for pharmaceutical and life

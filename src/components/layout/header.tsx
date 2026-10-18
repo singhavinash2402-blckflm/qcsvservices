@@ -60,7 +60,12 @@ export function Header({
             className="flex shrink-0 items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]"
             aria-label="QCSV Services home"
           >
-            <Logo variant={overlay ? "on-dark" : "auto"} height={40} priority />
+            <Logo
+              variant={overlay ? "on-dark" : "auto"}
+              compact
+              height={44}
+              priority
+            />
           </ScrollLink>
 
           <nav
