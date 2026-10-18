@@ -63,14 +63,6 @@ export function MobileNavigation() {
             className="qcsv-container flex flex-col gap-1"
             aria-label="Mobile navigation"
           >
-            <ScrollLink
-              href="/"
-              onClick={closeMenu}
-              className="rounded-[var(--radius-md)] px-4 py-3 text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
-            >
-              Home
-            </ScrollLink>
-
             <div className="flex items-center">
               <ScrollLink
                 href="/services"
