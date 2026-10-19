@@ -11,7 +11,11 @@ const pages = [
   "/privacy"
 ];
 
-type Violation = { id: string; impact?: string | null; nodes: unknown[] };
+type Violation = {
+  id: string;
+  impact?: string | null;
+  nodes: { target: unknown }[];
+};
 
 /**
  * Automated WCAG scan. It fails on serious and critical problems. Colour contrast
@@ -34,6 +38,14 @@ async function scan(page: import("@playwright/test").Page, label: string) {
 
   const contrast = violations.filter((v) => v.id === "color-contrast");
   for (const item of contrast) {
+    const targets = item.nodes
+      .slice(0, 5)
+      .map((node) => JSON.stringify(node.target))
+      .join(" ");
+    // Printed so it shows in the normal test output as well as the HTML report.
+    console.log(
+      `[contrast] ${label}: ${item.nodes.length} element(s). First: ${targets}`
+    );
     test.info().annotations.push({
       type: "contrast-review",
       description: `${label}: ${item.nodes.length} element(s)`

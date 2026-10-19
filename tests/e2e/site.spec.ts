@@ -12,7 +12,8 @@ test("every page in the sitemap loads with one heading, title, description and c
   const paths = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
     (match) => new URL(match[1]).pathname
   );
-  expect(paths.length).toBeGreaterThanOrEqual(30);
+  // 7 fixed pages + 12 services + 5 industries. Raise this when pages are added.
+  expect(paths.length).toBeGreaterThanOrEqual(24);
 
   for (const path of paths) {
     const result = await page.goto(path);
