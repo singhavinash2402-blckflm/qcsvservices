@@ -1,5 +1,8 @@
 # QCSV Image Guidelines
 
+> **Status note (October 2026).** Images are now in place. See `docs/05-design/asset-register.md`
+> for the current inventory and `docs/05-design/brand-guidelines.md` for the identity rules.
+
 **Document type:** Internal design-planning document  
 **Purpose:** Define the visual direction and rights-review expectations for future QCSV imagery.  
 **Status:** Planning only; no assets have been downloaded, selected, licensed or approved.
