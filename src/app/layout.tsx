@@ -57,7 +57,20 @@ export default function RootLayout({
               legalName: siteConfig.legalName,
               url: siteConfig.url,
               description: siteConfig.description,
-              logo: `${siteConfig.url}/icons/app-icon-512.png`
+              logo: `${siteConfig.url}/icons/app-icon-512.png`,
+              email: siteConfig.contact.email,
+              telephone: siteConfig.contact.phoneE164,
+              address: {
+                "@type": "PostalAddress",
+                ...siteConfig.contact.address
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                email: siteConfig.contact.email,
+                telephone: siteConfig.contact.phoneE164,
+                availableLanguage: ["English"]
+              }
             })
           }}
         />

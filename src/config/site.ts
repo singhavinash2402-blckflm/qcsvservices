@@ -26,6 +26,15 @@ export const siteConfig = {
     email: "info@qcsvservices.in",
     phone: "+91 93247 54416",
     phoneHref: "tel:+919324754416",
+    phoneE164: "+919324754416",
+    /** Structured version of the address, used for search engine data. */
+    address: {
+      streetAddress: "Madauli, Bhullanpur PAC",
+      addressLocality: "Varanasi",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "221108",
+      addressCountry: "IN"
+    },
     addressLines: [
       "QCSV Services Private Limited",
       "Madauli, Bhullanpur PAC",
