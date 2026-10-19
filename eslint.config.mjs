@@ -10,6 +10,10 @@ export default defineConfig([
     "node_modules/**",
     "out/**",
     "dist/**",
-    "coverage/**"
+    "coverage/**",
+    "playwright-report/**",
+    "test-results/**",
+    "screenshots/**",
+    ".lighthouseci/**"
   ])
 ]);

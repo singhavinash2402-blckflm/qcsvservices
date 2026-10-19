@@ -13,7 +13,10 @@
     "format:check": "prettier --check .",
     "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
     "prebuild": "node scripts/prebuild.mjs",
-    "check:images": "node scripts/prebuild.mjs"
+    "check:images": "node scripts/prebuild.mjs",
+    "test:e2e": "playwright test --grep-invert @screens",
+    "test:screens": "playwright test --grep @screens",
+    "test:e2e:install": "playwright install --with-deps chromium"
   },
   "repository": {
     "type": "git",
