@@ -99,11 +99,35 @@ export function QaCycle() {
 
   return (
     <figure>
+      <ol
+        aria-label="Quality assurance cycle steps"
+        className="mx-auto max-w-md space-y-3 sm:hidden"
+      >
+        {qaSteps.map((step, index) => (
+          <li
+            key={step.lines.join(" ")}
+            className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface-elevated)] px-4 py-3"
+          >
+            <span
+              aria-hidden="true"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-bold text-white"
+            >
+              {index + 1}
+            </span>
+            <span className="font-semibold text-[var(--foreground)]">
+              {step.lines.join(" ")}
+            </span>
+          </li>
+        ))}
+        <li className="px-1 text-sm text-[var(--foreground-muted)]">
+          Then the cycle repeats.
+        </li>
+      </ol>
       <svg
         viewBox="0 0 660 440"
         role="img"
         aria-label="Quality assurance cycle: identify issues with process, generate corrective actions, verify corrective action, implement corrective action, then monitor and control."
-        className="mx-auto w-full max-w-2xl"
+        className="mx-auto hidden w-full max-w-2xl sm:block"
       >
         <defs>
           <marker

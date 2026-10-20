@@ -148,7 +148,13 @@ export function ServicePage({ service }: Readonly<{ service: Service }>) {
         ) : null}
 
         {service.faqs && service.faqs.length > 0 ? (
-          <section className="qcsv-container-wide pb-16 md:pb-24">
+          <section
+            className={`qcsv-container-wide pb-16 md:pb-24 ${
+              Framework && !service.process && !service.deliverables
+                ? "pt-16 md:pt-24"
+                : ""
+            }`}
+          >
             <h2 className="text-3xl font-bold tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
               Common questions
             </h2>
