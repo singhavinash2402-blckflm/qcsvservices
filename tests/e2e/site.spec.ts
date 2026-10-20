@@ -112,14 +112,22 @@ test("the services page ends with the consultation call to action", async ({
   ).toHaveCount(1);
 });
 
+
 test("framework diagrams render on their service pages", async ({ page }) => {
   await page.goto("/services/quality-assurance");
+
   await expect(
-    page.getByRole("img", { name: /Quality assurance cycle/ })
+    page.getByRole("figure", {
+      name: "QCSV quality assurance framework: a continuous cycle.",
+    })
   ).toBeVisible();
 
   await page.goto("/services/project-management");
+
   await expect(
-    page.getByRole("img", { name: /Project management methodology/ })
+    page.getByRole("figure", {
+      name: /Project management methodology/i,
+    })
   ).toBeVisible();
 });
+
