@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { ConsultationProvider } from "@/components/consultation/consultation-provider";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { allowIndexing, siteConfig } from "@/config/site";
@@ -56,12 +57,26 @@ export default function RootLayout({
               legalName: siteConfig.legalName,
               url: siteConfig.url,
               description: siteConfig.description,
-              logo: `${siteConfig.url}/icons/app-icon-512.png`
+              logo: `${siteConfig.url}/icons/app-icon-512.png`,
+              email: siteConfig.contact.email,
+              telephone: siteConfig.contact.phoneE164,
+              address: {
+                "@type": "PostalAddress",
+                ...siteConfig.contact.address
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                email: siteConfig.contact.email,
+                telephone: siteConfig.contact.phoneE164,
+                availableLanguage: ["English"]
+              }
             })
           }}
         />
         <ThemeProvider>
           <ConsultationProvider>{children}</ConsultationProvider>
+          <RevealOnScroll />
         </ThemeProvider>
       </body>
     </html>

@@ -7,9 +7,11 @@ export function WhyQcsv() {
         Why QCSV
       </h2>
       <div className="mt-10 grid gap-4 md:grid-cols-3">
-        {reasons.map((reason) => (
+        {reasons.map((reason, index) => (
           <div
             key={reason.title}
+            data-reveal
+            data-reveal-delay={index * 100}
             className="rounded-3xl border border-[var(--border)] bg-[var(--surface-elevated)] p-8"
           >
             <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">

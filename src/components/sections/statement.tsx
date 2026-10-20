@@ -1,6 +1,6 @@
 export function Statement() {
   return (
-    <section className="qcsv-container-wide pb-6 pt-24 md:pt-32">
+    <section data-reveal className="qcsv-container-wide pb-6 pt-24 md:pt-32">
       <h2 className="max-w-4xl text-4xl font-bold leading-[1.04] tracking-[-0.03em] text-[var(--foreground)] md:text-6xl">
         From the first requirement to the final report.
       </h2>

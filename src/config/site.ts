@@ -5,6 +5,16 @@ export const siteConfig = {
   title: "Validation and Quality Support for Pharma and Life Sciences",
   description:
     "QCSV Services helps pharmaceutical and life sciences organisations validate computerised systems, qualify infrastructure and equipment, and prepare the documentation that goes with them.",
+  /**
+   * Optional notice shown above the menu (news, webinar, regulatory update).
+   * Leave as null to hide it. Example:
+   * { text: "New: SAP S/4 HANA validation support.", href: "/services/sap-services", linkLabel: "Read more" }
+   */
+  announcement: null as {
+    text: string;
+    href?: string;
+    linkLabel?: string;
+  } | null,
   ogImage: {
     url: "/og-default.jpg",
     width: 1200,
@@ -16,6 +26,15 @@ export const siteConfig = {
     email: "info@qcsvservices.in",
     phone: "+91 93247 54416",
     phoneHref: "tel:+919324754416",
+    phoneE164: "+919324754416",
+    /** Structured version of the address, used for search engine data. */
+    address: {
+      streetAddress: "Madauli, Bhullanpur PAC",
+      addressLocality: "Varanasi",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "221108",
+      addressCountry: "IN"
+    },
     addressLines: [
       "QCSV Services Private Limited",
       "Madauli, Bhullanpur PAC",
@@ -35,4 +54,4 @@ export const isProduction = process.env.VERCEL_ENV
  * NEXT_PUBLIC_ALLOW_INDEXING is "true". Set it at launch, after client sign-off.
  */
 export const allowIndexing =
-  isProduction && process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+  isProduction && process.env.NEXT_PUBLIC_ALLOW_INDEXING?.trim() === "true";

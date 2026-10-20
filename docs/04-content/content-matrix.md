@@ -1,5 +1,9 @@
 # QCSV Website Content Matrix
 
+> **Status note (October 2026).** This planning document came before the build. The live
+> wording now lives in `src/config/` (services, industries, stories, about). Where they differ,
+> the config files are correct. Use this file for background only.
+
 **Document type:** Internal planning document  
 **Purpose:** Source of truth for planning the About, Industries and Success Stories website areas.  
 **Status:** Working matrix; all unsupported QCSV claims require client confirmation before publication.

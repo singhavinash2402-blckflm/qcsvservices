@@ -1,5 +1,6 @@
 "use client";
 
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Logo } from "@/components/layout/logo";
 import { ConsultationButton } from "@/components/consultation/consultation-button";
 
@@ -53,6 +54,7 @@ export function Header({
           : "border-transparent bg-[var(--background)] shadow-[0_1px_0_var(--border)]"
       }`}
     >
+      <AnnouncementBar visible={!scrolled} />
       <div className="qcsv-container-wide">
         <div className="flex min-h-16 items-center justify-between gap-6">
           <ScrollLink

@@ -7,9 +7,11 @@ export function Faq() {
         Common questions
       </h2>
       <div className="mt-8 max-w-3xl">
-        {homeFaqs.map((item) => (
+        {homeFaqs.map((item, index) => (
           <details
             key={item.q}
+            data-reveal
+            data-reveal-delay={index * 60}
             className="qcsv-faq border-b border-[var(--border)] py-5"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">

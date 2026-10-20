@@ -8,7 +8,7 @@
   --surface-elevated: #ffffff;
   --foreground: #0b0f14;
   --foreground-muted: #4c5963;
-  --foreground-subtle: #66737d;
+  --foreground-subtle: #5b6772;
 
   --border: #dfe4e7;
   --border-strong: #c5cdd2;
@@ -217,6 +217,19 @@ header[data-overlay="true"] #desktop-services-menu {
 
 .qcsv-faq[open] summary::after {
   transform: rotate(45deg);
+}
+
+.qcsv-reveal-hidden {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+}
+
+.qcsv-reveal-hidden.is-visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {

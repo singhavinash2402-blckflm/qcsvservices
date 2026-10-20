@@ -1,5 +1,11 @@
 # QCSV Services - Project Guidelines
 
+> **Status note (October 2026).** This document predates the pharma-led repositioning and
+> the later build. Where it disagrees with `README.md`, the README and the code are correct.
+> Known outdated areas: positioning and visual strategy (now pharma-led, photo-led), design
+> tokens and fonts (now teal accent, Instrument Sans, white and near-black), the route list
+> (About is one page; Privacy and Terms now exist), and the image strategy.
+
 ## 1. Project Overview
 
 QCSV Services is being developed as a modern, professional technology services website for regulated and technology-driven environments.

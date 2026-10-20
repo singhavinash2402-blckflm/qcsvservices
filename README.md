@@ -1,674 +1,138 @@
-# QCSV Services Website
+# QCSV Services website
 
-## 1. Project Overview
+Website for QCSV Services Private Limited: validation, quality and regulated-systems
+support for pharmaceutical and life sciences organisations.
 
-QCSV Services is a modern technology and quality services website for organizations operating in regulated and technology-driven environments.
+- Live site: https://www.qcsvservices.in
+- Repository: https://github.com/singhavinash2402-blckflm/qcsvservices
 
-Approved positioning:
+## 1. Positioning
 
-Technology, validation and quality expertise for regulated environments.
+The site presents QCSV as a pharma-focused validation and quality partner. It does not
+claim certifications, approvals, named clients, awards or measurable results that the
+client has not supplied. See "Content rules" below before adding any wording.
 
-Core positioning:
+## 2. Technology
 
-Regulatory expertise + technology + quality + execution.
+- Next.js 16 (App Router) with React 19 and TypeScript
+- Tailwind CSS 3, `next-themes` (light default, dark toggle), `lucide-react`
+- Enquiry email through the Resend REST API, called from a server action
+- Vercel hosting, GitHub Actions CI, Dependabot updates
+- The build uses webpack on purpose (`next build --webpack`)
 
-The website is designed to communicate QCSV as a credible technology, validation and quality partner without making unsupported claims about certifications, regulatory approvals, clients, awards, guarantees or measurable business outcomes.
+## 3. Getting started
 
-## 2. Current Project Status
+Requires Node.js 22 or newer.
 
-Current SDLC stage:
+```bash
+npm ci
+cp .env.example .env.local   # then fill in the values
+npm run dev                  # http://localhost:3000
+```
 
-Pre-UAT / Client Review Preparation
+| Command                | What it does                                                  |
+| ---------------------- | ------------------------------------------------------------- |
+| `npm run dev`          | Start the development server                                  |
+| `npm run build`        | Production build (also clears stale dev types, checks images) |
+| `npm run typecheck`    | TypeScript check                                              |
+| `npm run lint`         | ESLint                                                        |
+| `npm run format:check` | Prettier check (CI runs this)                                 |
+| `npm run format`       | Prettier write                                                |
+| `npm run check:images` | List image paths used in code that are missing from `public`  |
+| `npm run clean`        | Delete the `.next` folder                                     |
 
-Completed:
+Before opening a pull request run `npm run typecheck && npm run lint && npm run format:check && npm run build`.
+If a build fails with type errors about pages that no longer exist, run `npm run clean`.
 
-- Project discovery and positioning
-- Requirements and content architecture
-- UI/design-system foundation
-- Next.js application foundation
-- Theme infrastructure
-- Responsive global navigation
-- Homepage
-- Services overview
-- 12 individual service pages
-- Industries section
-- About section
-- Success Stories section
-- Image asset integration
-- Navigation audit and fixes
-- Content governance documentation
-- UI specification documentation
-- Production build validation
+## 4. Environment variables
 
-Next major stages:
+Copy `.env.example` to `.env.local`. On Vercel, set the same names for Production and Preview.
 
-1. Vercel Preview deployment
-2. Client review
-3. Revision cycle
-4. UAT
-5. SEO and performance hardening
-6. CI/CD review
-7. Production deployment
-8. Production validation
-9. Future enhancement planning
+| Name                         | Purpose                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`       | Main public address, used for canonical links and the sitemap                   |
+| `NEXT_PUBLIC_ALLOW_INDEXING` | `true` lets search engines index the production site. Any other value blocks it |
+| `RESEND_API_KEY`             | Resend key with sending access                                                  |
+| `CONTACT_TO_EMAIL`           | Mailbox that receives enquiries                                                 |
+| `CONTACT_FROM_EMAIL`         | Sender address on the domain verified in Resend                                 |
 
-The production domain is:
+Never commit real values. Email setup steps are in `docs/06-operations/email-setup.md`.
 
-qcsvservices.in
+## 5. Where to edit things
 
-Do not connect the production domain until client review, UAT and release approval are complete.
+Almost all wording lives in typed files under `src/config/`, not inside page components.
 
-## 3. Technology Stack
+| To change                                      | Edit                                                                               |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Company name, contact details, site address    | `src/config/site.ts`                                                               |
+| Announcement bar above the menu                | `announcement` in `src/config/site.ts`                                             |
+| The 12 services (text, groups, FAQs, images)   | `src/config/services.ts`                                                           |
+| Industries                                     | `src/config/industries.ts`                                                         |
+| Success stories                                | `src/config/stories.ts`                                                            |
+| About page text                                | `src/config/about.ts`                                                              |
+| Home page hero slides, tiles, industries, FAQs | `src/config/home.ts`                                                               |
+| Privacy Policy and Terms of Use                | `src/config/legal.ts`                                                              |
+| Page layouts                                   | `src/components/` and `src/app/`                                                   |
+| Enquiry form and email                         | `src/components/consultation/`, `src/app/actions/enquiry.ts`, `src/lib/enquiry.ts` |
 
-Application:
+Service and industry pages are generated from the config, so adding a service means adding
+one entry in `src/config/services.ts` (the menu, footer, sitemap and forms update themselves).
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- next-themes
-- Lucide React
+## 6. Project structure
 
-Development:
-
-- Node.js
-- npm
-- Git
-- GitHub
-- VS Code
-
-Deployment:
-
-- Vercel
-- GitHub Actions
-- qcsvservices.in
-
-Current Next.js development and production commands intentionally use webpack because the current Tailwind/PostCSS setup is validated with webpack.
-
-## 4. Repository
-
-GitHub repository:
-
-https://github.com/singhavinash2402-blckflm/qcsvservices
-
-Production domain:
-
-https://qcsvservices.in
-
-Current development branch:
-
-phase-3-foundation
-
-The main branch should remain stable until the current logical development batch has been reviewed and approved.
-
-## 5. Local Development
-
-Install dependencies:
-
-npm install
-
-Start development server:
-
-npm run dev
-
-The development server runs using the configured Next.js webpack command.
-
-Production build:
-
-npm run build
-
-Run production server after a successful build:
-
-npm run start
-
-Type checking:
-
-npm run typecheck
-
-Linting:
-
-npm run lint
-
-Formatting:
-
-npm run format
-
-Formatting validation:
-
-npm run format:check
-
-Recommended validation sequence before committing:
-
-npm run typecheck; npm run lint; npm run build
-
-## 6. Environment Flow
-
-The intended release flow is:
-
-Local Development
-|
-v
-Vercel Preview
-|
-v
-Client Review
-|
-v
-Revision Cycle
-|
-v
-UAT
-|
-v
-Production
-|
-v
-qcsvservices.in
-
-The Vercel Preview environment is the preferred environment for client review before production DNS/domain configuration.
-
-## 7. Application Structure
-
-Primary application structure:
-
+```text
 src/
-app/
-components/
-layout/
-sections/
-theme/
-ui/
-config/
-lib/
-
+  app/            routes, metadata, sitemap, robots, manifest, icons
+  components/
+    consultation/ popup, form and button for enquiries
+    industries/   industry page template
+    layout/       header, footer, logo, navigation, announcement bar
+    sections/     home page sections
+    services/     service page template and framework diagrams
+    shared/       hero, call-to-action band, story cards
+    ui/           small reusable controls
+  config/         all site content and settings (see section 5)
+  lib/            enquiry validation and email text
 public/
-images/
-icons/
-logos/
-
-docs/
-04-content/
-05-design/
-source-material/
-
-tests/
-
-.github/
-workflows/
-
-## 8. Current Route Inventory
-
-Home:
-
-/
-
-About:
-
-/about
-/about/mission-vision
-/about/our-approach
-/about/why-qcsv
-
-Services:
-
-/services
-/services/computer-system-validation
-/services/quality-assurance
-/services/it-infrastructure-qualification
-/services/audits-assessments
-/services/sap-services
-/services/manufacturing-execution-systems
-/services/serialization
-/services/cloud-services
-/services/project-management
-/services/project-documentation
-/services/it-staffing
-/services/website-development
-
-Industries:
-
-/industries
-/industries/pharmaceuticals
-/industries/medical-devices
-/industries/life-sciences
-/industries/semiconductor
-/industries/regulated-manufacturing
-
-Success Stories:
-
-/success-stories
-
-System routes generated by the application also include:
-
-/robots.txt
-/sitemap.xml
-
-Privacy and Terms routes are planned future production requirements and must not be linked as real routes until implemented.
-
-## 9. Service Catalog
-
-The approved QCSV service catalog contains 12 services.
-
-Validation and Quality:
-
-1. Computer System Validation
-2. Quality Assurance
-3. IT Infrastructure Qualification
-4. Audits / Assessments
-
-Enterprise Technology:
-
-5. SAP Services
-6. Manufacturing Execution Systems
-7. Serialization
-8. Cloud Services
-
-Project Delivery:
-
-9. Project Management
-10. Project Documentation
-11. IT Staffing
-
-Digital:
-
-12. Website Development
-
-Do not add new service claims without client confirmation.
-
-## 10. Industry Positioning
-
-Current industry areas:
-
-- Pharmaceuticals
-- Medical Devices
-- Life Sciences
-- Semiconductor
-- Regulated Manufacturing
-
-Semiconductor is represented as a technology-driven manufacturing environment and is supported by the approved success-story material.
-
-Do not imply that QCSV serves additional industries unless approved.
-
-## 11. Success Stories
-
-The approved success stories are:
-
-1. SAP Validation - UK - Pharmaceuticals
-2. SAP Technical Upgrade - US - Semiconductor
-3. LIMS Validation - US - Pharmaceuticals
-4. Equipment Qualification - Israel - Medical Devices
-5. SAP GAP Assessment - Israel - Pharmaceuticals
-6. SOP Preparation - Israel - Pharmaceuticals
-7. Empower 3 Validation - US - Pharmaceuticals
-
-Do not invent:
-
-- Client names
-- Quantitative outcomes
-- Certifications
-- Awards
-- Regulatory approvals
-- Partnerships
-- Technology claims
-- Project details not supplied by the client
-
-## 12. Visual and Asset Strategy
-
-QCSV should visually communicate:
-
-1. Technology and IT services
-2. Validation, quality and digital systems
-3. Regulated-industry context
-
-Preferred visual balance:
-
-- Approximately 70 percent technology and digital
-- Approximately 20 percent validation and quality
-- Approximately 10 percent industry context
-
-Avoid positioning QCSV primarily as a manufacturing company.
-
-Avoid:
-
-- Generic laptop imagery
-- Generic handshake imagery
-- Generic office stock photography
-- Excessive futuristic AI imagery
-- Heavy 3D effects
-- Excessive gradients or glows
-- Competitor website imagery
-- Copyright-uncertain assets
-
-Public web assets are stored under:
-
-public/images/
-
-Client/reference source material is stored outside the public web root under:
-
-docs/05-design/source-material/
-
-Client source files must not be placed under public/ unless explicitly approved for web publication.
-
-All external assets should have source, creator and licensing information recorded in the asset register.
-
-## 13. Content Governance
-
-Client-provided content is the primary source of truth.
-
-External research may be used to validate terminology, industry concepts and general context.
-
-Public website copy must be original QCSV wording.
-
-Do not copy content, structure, visual identity or imagery from reference websites.
-
-Do not claim that QCSV is:
-
-- Certified
-- Regulatory approved
-- ISO certified
-- FDA approved
-- GxP certified
-- An official SAP partner
-- An official GS1 partner
-- An official ISPE partner
-- An official PMI partner
-
-unless the client explicitly confirms the applicable claim.
-
-Do not claim that QCSV guarantees:
-
-- Regulatory compliance
-- Audit success
-- Inspection outcomes
-- Validation approval
-- Security outcomes
-- Business results
-
-without explicit client-approved evidence.
-
-## 14. Design System
-
-The current design system uses:
-
-- Light and dark themes
-- QCSV primary blue
-- Secondary indigo
-- Accent green
-- Dark ink foundation
-- Inter-style body typography
-- Jakarta-style display typography
-- Consistent spacing
-- Rounded cards
-- Restrained shadows
-- Responsive containers
-- Accessible controls
-- Reduced-motion support
-
-Reusable UI components are located under:
-
-src/components/ui/
-
-Theme components are located under:
-
-src/components/theme/
-
-Layout components are located under:
-
-src/components/layout/
-
-Page sections are located under:
-
-src/components/sections/
-
-The UI specification is maintained in:
-
-SYSTEM_INTERFACE.md
-
-## 15. Documentation
-
-Current project documentation includes:
-
-PROJECT_GUIDELINES.md
-
-README.md
-
-SYSTEM_INTERFACE.md
-
-Additional content and design documentation is maintained under:
-
-docs/
-
-Important content documents include:
-
-docs/04-content/content-matrix.md
-
-docs/04-content/service-content-matrix.md
-
-Client source/reference material is maintained under:
-
-docs/05-design/source-material/
-
-Documentation must reflect the current implementation and SDLC state.
-
-## 16. Quality Assurance
-
-Before committing a logical development batch, run:
-
-npm run typecheck; npm run lint; npm run build
-
-A successful validation should show:
-
-- TypeScript completed successfully
-- ESLint completed successfully
-- Next.js production build completed successfully
-- Static pages generated successfully
-
-Also verify:
-
-- Navigation
-- Internal links
-- Theme switching
-- Responsive layout
-- Images
-- Mobile menu
-- CTAs
-- Service routes
-- Industry routes
-- About routes
-- Success Stories routes
-- Browser console errors
-- Broken or missing assets
-
-## 17. Git Workflow
-
-Use feature or phase branches for active development.
-
-Current branch:
-
-phase-3-foundation
-
-Recommended workflow:
-
-1. Make a logical batch of changes.
-2. Validate locally.
-3. Review the diff.
-4. Run typecheck.
-5. Run lint.
-6. Run production build.
-7. Review the browser.
-8. Commit the logical batch.
-9. Push the branch.
-10. Create or update the Preview deployment.
-11. Review before merging to main.
-
-Do not commit unrelated changes together.
-
-Do not push unfinished work to main.
-
-## 18. Deployment Strategy
-
-Initial deployment target:
-
-Vercel Preview
-
-Purpose:
-
-- Client review
-- Responsive testing
-- Cross-browser testing
-- Content review
-- Stakeholder feedback
-- UAT preparation
-
-Production deployment target:
-
-qcsvservices.in
-
-Production deployment should occur only after:
-
-- Client review completed
-- Required revisions completed
-- UAT completed
-- Critical defects resolved
-- SEO reviewed
-- Performance reviewed
-- Accessibility reviewed
-- Production configuration reviewed
-- Final approval received
-
-## 19. Current Release Gates
-
-Before Vercel Preview:
-
-- Build passes
-- Typecheck passes
-- Lint passes
-- Navigation audit passes
-- Image audit passes
-- Route inventory reviewed
-- Documentation updated
-
-Before UAT:
-
-- Preview deployment available
-- Client content review completed
-- Visual issues resolved
-- Responsive issues resolved
-- Browser testing completed
-- SEO baseline completed
-
-Before production:
-
-- UAT approval
-- Critical defects closed
-- Production environment reviewed
-- Domain configuration reviewed
-- Sitemap and robots reviewed
-- Analytics requirements confirmed
-- Legal pages implemented if required
-- Final smoke test completed
-
-## 20. Future Versions
-
-V1:
-
-- Marketing website
-- Static/content-driven pages
-- Responsive UI
-- Light/dark theme
-- SEO foundation
-- Vercel deployment
-
-V2:
-
-- Headless CMS
-- Content management
-- Admin-managed pages
-- Dynamic insights
-- Improved content workflows
-
-V3:
-
-Potential backend expansion:
-
-- Node.js API
-- PostgreSQL
-- Authentication
-- Admin workflows
-- Structured business data
-- Additional integrations
-
-Do not introduce backend infrastructure before there is a confirmed business requirement.
-
-## 21. Definition of Done
-
-A feature or page is considered complete when:
-
-- Requirements are understood
-- Content is approved or clearly marked as provisional
-- Design follows the QCSV design system
-- Responsive behavior is implemented
-- Accessibility basics are addressed
-- Navigation is connected to real routes
-- Images are licensed/approved and documented
-- Typecheck passes
-- Lint passes
-- Production build passes
-- Browser verification is complete
-- Documentation is updated where required
-- Git diff has been reviewed
-
-## 22. Important Project Rules
-
-Keep QCSV company information separate from unrelated personal projects or resumes.
-
-Never use personal employment metrics, achievements or experience as QCSV company claims.
-
-Do not fabricate company information to make the website appear larger or more established.
-
-Prefer accurate, defensible and client-approved wording over impressive but unsupported marketing claims.
-
-Keep the website lightweight, maintainable and scalable.
-
-Do not add complexity without a clear requirement.
-
-## 23. Current Next Step
-
-The current development milestone is:
-
-Pre-UAT / Client Review Preparation
-
-Immediate sequence:
-
-1. Complete documentation checkpoint
-2. Review Git diff
-3. Commit the current logical batch
-4. Push phase-3-foundation
-5. Configure Vercel Preview
-6. Perform client-review pass
-7. Capture revisions
-8. Prepare UAT checklist
-9. Complete UAT
-10. Prepare production release
-
----
-
-Project:
-
-QCSV Services Website
-
-Repository:
-
-https://github.com/singhavinash2402-blckflm/qcsvservices
-
-Production domain:
-
-qcsvservices.in
-
-Current branch:
-
-phase-3-foundation
-
-Status:
-
-Pre-UAT / Client Review Preparation
+  brand/          logo files (SVG)
+  icons/          app icons
+  images/         photography
+scripts/          prebuild checks
+docs/             content, design and operations notes
+```
+
+## 7. Images and brand
+
+- Photography lives in `public/images/`. Keep each file under about 400 KB (2000 px wide, JPEG).
+- Service photos are named after the service slug, for example `public/images/services/sap-services.jpg`.
+- Logo files are in `public/brand/`: full logo, a compact version without the tagline (used in the
+  header), light and dark versions, and one-colour versions. The `Logo` component picks the right one.
+- Record each image's source and licence in `docs/05-design/asset-register.md`.
+
+## 8. Search engines and sharing
+
+- `NEXT_PUBLIC_ALLOW_INDEXING` must be `true` for the sitemap to be offered and pages to be indexable.
+- Every page sets a canonical link, title and description. Social sharing uses `public/og-default.jpg`.
+- `/sitemap.xml` is generated from the config, so it stays current when services change.
+
+## 9. Branches, CI and deployment
+
+- Work on a feature branch and open a pull request into `main`.
+- CI (`.github/workflows/ci.yml`) runs typecheck, lint, format check and build on every pull request.
+- Vercel builds a preview for each pull request and deploys `main` to production.
+- Dependabot opens weekly update pull requests. Check CI is green before merging.
+
+## 10. Content rules
+
+- Client-provided material is the source of truth. Keep wording original and plain.
+- Do not claim certifications, approvals (for example ISO, FDA), partnerships, awards, named
+  clients, quantified results or guarantees unless the client confirms them in writing.
+- Statements about how QCSV works, and the legal pages, must be confirmed by the client before launch.
+- Keep QCSV company information separate from any personal project or employment details.
+
+## 11. Open items
+
+- Client to confirm contact details, the legal pages and wording marked for confirmation.
+- Photo sources and licences still to be recorded in the asset register.
+- Move hosting and the repository to client-owned accounts (see the handover notes).
+- Browser tests, accessibility check and performance check.

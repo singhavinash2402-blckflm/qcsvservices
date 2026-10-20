@@ -30,7 +30,10 @@ export function IndustryPage({ industry }: Readonly<{ industry: Industry }>) {
           secondary={{ label: "All industries", href: "/industries" }}
         />
 
-        <section className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
+        <section
+          data-reveal
+          className="qcsv-container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]"
+        >
           <div className="space-y-5 text-lg leading-8 text-[var(--foreground-muted)]">
             {industry.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
