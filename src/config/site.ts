@@ -54,4 +54,4 @@ export const isProduction = process.env.VERCEL_ENV
  * NEXT_PUBLIC_ALLOW_INDEXING is "true". Set it at launch, after client sign-off.
  */
 export const allowIndexing =
-  isProduction && process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+  isProduction && process.env.NEXT_PUBLIC_ALLOW_INDEXING?.trim() === "true";
