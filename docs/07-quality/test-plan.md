@@ -38,6 +38,26 @@ Widths: 360, 768, 1024, 1440 px.
 - [ ] Browser console has no errors or Content-Security-Policy complaints
 - [ ] Lighthouse report reviewed; scores recorded in `CHANGELOG.md` notes
 
+## Running Lighthouse on your computer
+
+Lighthouse reads the page as search engines would, so the production build must allow
+indexing. Use quotes so Windows does not add a trailing space to the value.
+
+Command Prompt:
+
+```bash
+set "NEXT_PUBLIC_ALLOW_INDEXING=true" && npm run build && npx @lhci/cli@0.14.0 autorun --config=lighthouserc.json
+```
+
+PowerShell:
+
+```bash
+$env:NEXT_PUBLIC_ALLOW_INDEXING="true"; npm run build; npx @lhci/cli@0.14.0 autorun --config=lighthouserc.json
+```
+
+Reports are written to `.lighthouseci`. Rebuild without the variable afterwards if you want
+to test the normal "blocked from search engines" state.
+
 ## Performance targets (advisory)
 
 Performance 80+, Accessibility 95+, Best practices 90+, SEO 95+ on mobile. Largest image
