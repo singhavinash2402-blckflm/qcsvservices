@@ -9,7 +9,7 @@
         "http://localhost:3100/services/sap-services",
         "http://localhost:3100/about"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {

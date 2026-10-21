@@ -16,6 +16,7 @@
 Browser tests start their own server on port 3100 with email settings blanked, so they never
 send a real email.
 
+Run the browser tests against a normal build (made without the Lighthouse indexing variable).
 First-time setup: `npm install -D @playwright/test @axe-core/playwright`, then
 `npx playwright install --with-deps chromium`, then `npm run build && npm run test:e2e`.
 
