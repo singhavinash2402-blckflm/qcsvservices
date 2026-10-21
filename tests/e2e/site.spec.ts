@@ -84,8 +84,19 @@ test("robots, manifest and the skip link are in place", async ({
 }) => {
   const robots = await request.get("/robots.txt");
   expect(robots.status()).toBe(200);
-  // The test server runs with indexing switched off.
-  expect(await robots.text()).toContain("Disallow: /");
+  const robotsText = await robots.text();
+
+  // robots.txt and the page meta tag are fixed at build time, so check that they
+  // agree with each other rather than assuming how the site was built.
+  await page.goto("/");
+  const meta =
+    (await page.locator('meta[name="robots"]').getAttribute("content")) ?? "";
+  if (robotsText.includes("Disallow: /")) {
+    expect(meta).toContain("noindex");
+  } else {
+    expect(meta).not.toContain("noindex");
+    expect(robotsText).toContain("Sitemap:");
+  }
 
   const manifest = await request.get("/manifest.webmanifest");
   expect(manifest.status()).toBe(200);

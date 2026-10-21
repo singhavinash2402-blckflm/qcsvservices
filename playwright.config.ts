@@ -21,8 +21,9 @@ export default defineConfig({
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile", use: { ...devices["Pixel 7"] } }
   ],
-  // Serves the production build (run `npm run build` first). Email settings are
-  // blanked on purpose so the tests can never send a real enquiry.
+  // Serves the existing production build (run `npm run build` first, without the
+  // Lighthouse indexing variable). Email settings are blanked on purpose so the
+  // tests can never send a real enquiry.
   webServer: {
     command: `npm run start -- --port ${port}`,
     url: `http://localhost:${port}`,
