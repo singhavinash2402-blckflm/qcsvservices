@@ -75,6 +75,14 @@ Vercel keeps serving `qcsvservices.vercel.app` after a custom domain is connecte
 - Major versions (for example a new Next.js, React or Tailwind major) need a branch, a full test
   run and a visual check before merging.
 - After any update run the browser tests (`docs/07-quality/test-plan.md`).
+- Security advisories: the check that matters is `npm audit --omit=dev` (packages that ship to
+  visitors). CI runs it. Advisories in build tools (for example the Tailwind 3 and ESLint
+  chains) cannot be reached by visitors; they clear when those tools move to new major versions.
+  Do not run `npm audit fix --force`.
+- To try a major update from a Dependabot pull request on your computer:
+  `git fetch origin pull/<number>/head:pr-<number>`, `git checkout pr-<number>`, `npm ci`, then
+  `npm run typecheck && npm run lint && npm run build && npm run test:e2e`. Merge only if all pass
+  and the screenshots (`npm run test:screens`) look the same.
 
 ## Content Security Policy
 
