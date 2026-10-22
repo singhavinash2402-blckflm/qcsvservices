@@ -50,7 +50,6 @@ whose licence cannot be confirmed.
 
 ## Flags
 
-- `/images/services/quality-assurance.jpg` shows an "ISO certification" seal. The client has not
-  stated that QCSV holds an ISO certification, so this image can suggest something untrue.
-  Replace it, or confirm the certification in writing.
+- `/images/services/quality-assurance.jpg` shows an "ISO certification" seal. The client confirmed in
+  October 2026 that this image is approved for use.
 - Photographs of people: prefer images from sources that publish model releases.

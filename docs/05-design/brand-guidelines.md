@@ -49,7 +49,8 @@ All files are in `public/brand/`.
 
 - Real-looking settings: laboratories, clean rooms, manufacturing floors, offices, data centres.
 - Avoid images that imply certifications or approvals (for example ISO seals) unless the client
-  holds them. Avoid fake dashboards with readable brand names.
+  holds them. The ISO-seal photo on the Quality Assurance page was approved by the client in
+  October 2026. Avoid fake dashboards with readable brand names.
 - Record the source and licence of every photo in `docs/05-design/asset-register.md`.
 
 ## Voice

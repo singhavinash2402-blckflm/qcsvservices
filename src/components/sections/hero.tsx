@@ -9,14 +9,6 @@ import { heroSlides } from "@/config/home";
 
 export function Hero() {
   const [active, setActive] = useState(0);
-  // Only the first image is loaded up front. The others follow shortly after,
-  // so they never compete with it on slow connections.
-  const [slidesReady, setSlidesReady] = useState(false);
-
-  useEffect(() => {
-    const id = window.setTimeout(() => setSlidesReady(true), 2500);
-    return () => window.clearTimeout(id);
-  }, []);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -29,26 +21,26 @@ export function Hero() {
 
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0b0f14] text-white">
-      {heroSlides.map((slide, index) =>
-        index > 0 && !slidesReady ? null : (
-          <div
-            key={slide.src}
-            aria-hidden="true"
-            className={`absolute inset-0 -z-20 transition-opacity duration-[1400ms] ${
-              index === active ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt=""
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className={`object-cover ${index === active ? "qcsv-kenburns" : ""}`}
-            />
-          </div>
-        )
-      )}
+      {heroSlides.map((slide, index) => (
+        <div
+          key={slide.src}
+          aria-hidden="true"
+          className={`absolute inset-0 -z-20 transition-opacity duration-[1400ms] ${
+            index === active ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Image
+            src={slide.src}
+            alt=""
+            fill
+            priority={index === 0}
+            // The first image leads; the others must not compete with it.
+            fetchPriority={index === 0 ? undefined : "low"}
+            sizes="100vw"
+            className={`object-cover ${index === active ? "qcsv-kenburns" : ""}`}
+          />
+        </div>
+      ))}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(6,12,18,0.55)_0%,rgba(6,12,18,0.15)_40%,rgba(6,12,18,0.82)_100%)]"
@@ -80,10 +72,7 @@ export function Hero() {
             <button
               key={slide.src}
               type="button"
-              onClick={() => {
-                setSlidesReady(true);
-                setActive(index);
-              }}
+              onClick={() => setActive(index)}
               aria-label={`Show image ${index + 1}`}
               aria-current={index === active}
               className={`h-1 w-9 rounded-full transition-colors ${
